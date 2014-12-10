@@ -140,15 +140,39 @@ $(document).ready(function() {
                             message:'Descrição do problema obrigatória.'
                         },
                         stringLength:{
-                            min:5,
-                            message:'Descrição muito curta;'
+                            min:10,
+                            message:'Descrição muito curta'
                         }
                     }
                 }
             }//fields
-        });
+        })
+        .on('success.field.bv', function(e, data) {
+            if (data.bv.isValid()) {
+                data.bv.disableSubmitButtons(false);
+            }
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
+            var $form = $(e.target);
+            setConfig();
+            alertify.confirm("Cadastrar entrada do serviço ?", function (ok) {
+                if (ok) {
+
+                    $.post(dirClientePHP+"cadastrarCliente.php", $form.serialize(), function (result) {
+                        alertify.success(result);
+                        $($form).data('bootstrapValidator').resetForm();
+                        $form[0].reset();
+
+                    });//post
+                }else {
+                    return false;
+                }
+            });
+        }); // ON SUCCESS;
 
 
 
 
-});
+
+});// Jquery ON load event

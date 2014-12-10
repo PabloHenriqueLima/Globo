@@ -85,8 +85,8 @@ textarea {
 #frm_editarCliente{
     display: none;
 }
-.buscaBox{
-margin-bottom: 30px;
+.slct_buscarCliente {
+    width: 560px;
 }
 pre{
     padding: 5px;

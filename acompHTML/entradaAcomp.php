@@ -6,7 +6,7 @@
         <div class="col-sm-10">
             <div class="input-group">
                 <label for="slct_buscarCliente"></label>
-            <select data-placeholder="Clique e digite o nome do cliente" style="width:560px;" id="slct_buscarCliente" class="slct_buscarCliente" tabindex="1">
+            <select data-placeholder="Clique e digite o nome do cliente" name="slct_buscarCliente" id="slct_buscarCliente" class="slct_buscarCliente" tabindex="1">
                 <option value=""></option>
             </select>
             </div>
