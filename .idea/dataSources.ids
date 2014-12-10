@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - globodb@localhost" uuid="44c287b1-1ebc-4cb3-bbaa-b0396054e05b">
+    <database-info product="MySQL" version="5.6.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="globodb"/>
+    <table name="clientes" schema="" catalog="globodb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nomeCliente" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cpfCliente" sqlType="CHAR" precision="14" scale="0" nullable="false" jdbcType="1"/>
+      <column name="endCliente" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="bairroCliente" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cepCliente" sqlType="CHAR" precision="9" scale="0" nullable="false" jdbcType="1"/>
+      <column name="telefoneCliente" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
+      <column name="telelefoneBCliente" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
+      <column name="dataCadastroCliente" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="idx_nome_cli" unique="false" columns="nomeCliente,cpfCliente"/>
+    </table>
+    <table name="entrada" schema="" catalog="globodb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="codservico" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="equipamento" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dataEntrada" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="descDefeito" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="carregador" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="dados" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="statusServico" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cartpreto" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cartcor" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="finalizado" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="garantia" schema="" catalog="globodb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="servicogarantia" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="datainicio" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="periodo" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="saida" schema="" catalog="globodb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="codigoservico" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="preco" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
+      <column name="databaixa" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="descbaixa" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="garantia" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>
