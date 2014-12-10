@@ -105,4 +105,50 @@ $(document).ready(function() {
                 }
             });
         }); // ON SUCCESS;
+
+    // @ Validação Entrada @ //
+
+    $('#frm_entradaServico')
+        .bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                nomeProduto: {
+                    validators: {
+                        notEmpty: {
+                            message: 'O nome do produto é obrigatório.'
+                        },
+                        stringLength:{
+                            min:5,
+                            message:'Nome muito curto.'
+                        }
+                    }
+                },
+                dataEntrada:{
+                    validators:{
+                        notEmpty:{
+                            message:'A data de entrada é obrigatória.'
+                        }
+                    }
+                },
+                descDefeito:{
+                    validators:{
+                        notEmpty:{
+                            message:'Descrição do problema obrigatória.'
+                        },
+                        stringLength:{
+                            min:5,
+                            message:'Descrição muito curta;'
+                        }
+                    }
+                }
+            }//fields
+        });
+
+
+
+
 });

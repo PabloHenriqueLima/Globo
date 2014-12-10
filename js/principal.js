@@ -117,3 +117,12 @@ $(function () {
     var buscaCliente = $(".chosen-search").find('input');
     buscaCliente.typeWatch( options2 );
 });
+// @ CARTUCHO @ //
+var cartuchos = function () {
+    if ($("#comcartucho").prop("checked")) {
+        $("#cartucho").show();
+    } else {
+        $("#cartucho").hide();
+    }
+}
+$(".comcartucho").on("click",cartuchos);

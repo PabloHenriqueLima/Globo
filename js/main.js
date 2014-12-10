@@ -94,14 +94,7 @@ $("#gerargarantia").on("click",garantia);
 
 //////###########//////////// VERIFICAR COM CARTUCHOS //////############//////////////########
 
-var cartuchos = function () {
-    if ($("#comcartucho").prop("checked")) {
-        $("#cartucho").show();
-    } else {
-        $("#cartucho").hide();
-    }
-}
-$("#comcartucho").on("click",cartuchos);
+
 
 //////###########//////////// BAIXA NO SERVIÇO//////############//////////////########
 $("#codigoservico").blur(function () {
