@@ -15,6 +15,5 @@ $sql->bind_result($id,$nome,$cpf,$endereco,$bairro,$cep,$telefone,$telefoneB,$da
 if($sql->num_rows >=1 AND $sql->num_rows < 10){
     while($sql->fetch()){
         echo "<option value=\"$id\">$nome</option>";
-        $i++;
     }
 }

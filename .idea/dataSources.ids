@@ -21,19 +21,18 @@
       <index name="idx_nome_cli" unique="false" columns="nomeCliente,cpfCliente"/>
     </table>
     <table name="entrada" schema="" catalog="globodb" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="codservico" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="codigoServico" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
       <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="equipamento" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="equipamento" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
       <column name="dataEntrada" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="descDefeito" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="carregador" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
-      <column name="dados" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="caboDados" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cartuchoPreto" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cartuchoColorido" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <column name="statusServico" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
-      <column name="cartpreto" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="cartcor" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <column name="finalizado" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
-      <primary-key name="PRIMARY" columns="id"/>
+      <primary-key name="PRIMARY" columns="codigoServico"/>
     </table>
     <table name="garantia" schema="" catalog="globodb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

@@ -19,12 +19,6 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="nome" class="col-sm-4 control-label">Data de entrada</label>
-        <div class="col-sm-3">
-            <input type="text" name="dataEntrada" class="form-control" id="dataEntrada" data-mask="99/99/9999" placeholder="Data">
-        </div>
-    </div>
-    <div class="form-group">
         <textarea class="form-control" name="descDefeito"id="descDefeito" rows="3" placeholder="Descrição do Defeito"></textarea>
     </div>
     <div class="form-group">

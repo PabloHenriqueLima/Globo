@@ -106,7 +106,7 @@ $(document).ready(function() {
             });
         }); // ON SUCCESS;
 
-    // @ Validação Entrada @ //
+    // @ Validação Entrada de serviço @ //
 
     $('#frm_entradaServico')
         .bootstrapValidator({
@@ -131,6 +131,10 @@ $(document).ready(function() {
                     validators:{
                         notEmpty:{
                             message:'A data de entrada é obrigatória.'
+                        },
+                        stringLength:{
+                            min:10,
+                            message:'Data incompleta.'
                         }
                     }
                 },
@@ -158,9 +162,11 @@ $(document).ready(function() {
             setConfig();
             alertify.confirm("Cadastrar entrada do serviço ?", function (ok) {
                 if (ok) {
-
-                    $.post(dirClientePHP+"cadastrarCliente.php", $form.serialize(), function (result) {
-                        alertify.success(result);
+                    var formS = $form.serialize();
+                    console.log(formS);
+                    $.post(dirAcompPHP+"cadastrarEntradaProduto.php", $form.serialize(), function (result) {
+                        window.sessionStorage.setItem('ultimoCodigo',result);
+                        alertify.alert('Serviço cadastrado com sucesso, anote o código do serviço: ' + result);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
 

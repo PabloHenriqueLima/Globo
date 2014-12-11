@@ -107,7 +107,6 @@ $(function () {
                 if(response){
                     $(".slct_buscarCliente").empty().append(response).trigger("chosen:updated");
                 }
-
             });
         },
         wait: 1500,
