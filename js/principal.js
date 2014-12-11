@@ -109,7 +109,7 @@ $(function () {
                 }
             });
         },
-        wait: 1500,
+        wait: 300,
         captureLength: 1
     }
     $(".slct_buscarCliente").chosen();
@@ -125,3 +125,8 @@ var cartuchos = function () {
     }
 }
 $(".comcartucho").on("click",cartuchos);
+// @ ULTIMO SERVIÇO @ //
+
+$(document).on("click","#btn_verUltimoServico", function () {
+    alertify.alert('O código do ultimo serviço cadastrado é: ' + window.localStorage.getItem('ultimoCodigo'));
+})

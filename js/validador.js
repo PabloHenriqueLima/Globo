@@ -165,10 +165,11 @@ $(document).ready(function() {
                     var formS = $form.serialize();
                     console.log(formS);
                     $.post(dirAcompPHP+"cadastrarEntradaProduto.php", $form.serialize(), function (result) {
-                        window.sessionStorage.setItem('ultimoCodigo',result);
+                        window.localStorage.setItem('ultimoCodigo',result);
                         alertify.alert('Serviço cadastrado com sucesso, anote o código do serviço: ' + result);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
+                        $("#verUltimoServico").show();
 
                     });//post
                 }else {
@@ -176,9 +177,4 @@ $(document).ready(function() {
                 }
             });
         }); // ON SUCCESS;
-
-
-
-
-
 });// Jquery ON load event

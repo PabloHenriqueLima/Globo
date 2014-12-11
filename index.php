@@ -47,6 +47,7 @@
 
 </div> <!-- TAB COM CONTEUDO DO MENU -->
 </div>
+<div id="verUltimoServico"><button type="button" id="btn_verUltimoServico" class="btn btn-success">Serviço</button></div>
 <!--<script type="text/javascript">-->
 <!--    var cjsscript = document.createElement('script');-->
 <!--    cjsscript.src = "js/plugins/control.min.js";-->
