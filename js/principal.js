@@ -9,7 +9,7 @@ var options = {
     },
     wait: 500,
     highlight: true,
-    captureLength: 1
+    captureLength: 4
 }
 $("#buscarCliente").typeWatch( options );
 // ############# GERENCIAR CLIENTE ################## //
@@ -110,7 +110,7 @@ $(function () {
             });
         },
         wait: 300,
-        captureLength: 1
+        captureLength: 4
     }
     $(".slct_buscarCliente").chosen();
     var buscaCliente = $(".chosen-search").find('input');
@@ -129,4 +129,4 @@ $(".comcartucho").on("click",cartuchos);
 
 $(document).on("click","#btn_verUltimoServico", function () {
     alertify.alert('O código do ultimo serviço cadastrado é: ' + window.localStorage.getItem('ultimoCodigo'));
-})
+});
