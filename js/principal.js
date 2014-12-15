@@ -129,4 +129,16 @@ $(".comcartucho").on("click",cartuchos);
 
 $(document).on("click","#btn_verUltimoServico", function () {
     alertify.alert('O código do ultimo serviço cadastrado é: ' + window.localStorage.getItem('ultimoCodigo'));
-});
+})
+
+// @ Gerar garantia baixa serviço @ //    var garantia = function () {
+
+var garantia = function () {
+    if($("#gerargarantia")[0].checked){
+        $("#gerarGarantiaBox").show();
+    }else {
+        $("#gerarGarantiaBox").hide();
+    }
+
+}
+$("#gerargarantia").on("click",garantia);

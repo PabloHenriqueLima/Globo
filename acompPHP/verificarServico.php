@@ -3,18 +3,17 @@ require_once ('../configs/configs.php');
 
 $codigoServico = $_POST['codigoServico'];
 
-
-$query = "SELECT codservico,equipamento,nome_cli FROM entrada Ent INNER JOIN clientes Cli ON Ent.idCliente = Cli.id WHERE codservico = ?";
+$query = "SELECT ent.equipamento,cli.nomeCliente FROM entrada ent INNER JOIN clientes cli ON ent.idCliente = cli.id WHERE codigoServico = ?";
 $sql = $mysqli->prepare($query);
-$sql->bind_param('i',$codigoServico);
+$sql->bind_param('s',$codigoServico);
 $sql->execute();
 $sql->store_result();
-$sql->bind_result($codServico,$produto,$nomeCliente);
+$sql->bind_result($equipamento,$nomeCliente);
 $sql->fetch();
 if($sql->num_rows >= 1){
-    $dados = ['CodServico'=>$codigoServico,'produto'=>$produto,'cliente'=>$nomeCliente];
+    $dados = ['equipamento'=>$equipamento,'cliente'=>$nomeCliente];
     $dadosJSON = json_encode($dados,JSON_UNESCAPED_UNICODE);
     echo $dadosJSON;
 }else{
-    echo "false";
+    echo false;
 }

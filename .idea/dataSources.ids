@@ -43,10 +43,10 @@
     </table>
     <table name="saida" schema="" catalog="globodb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="codigoservico" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
-      <column name="preco" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
-      <column name="databaixa" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="descbaixa" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="codigoServico" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
+      <column name="preco" sqlType="VARCHAR" precision="11" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dataDaBaixa" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="descBaixa" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="garantia" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>

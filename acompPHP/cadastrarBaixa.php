@@ -3,15 +3,8 @@
 
 require_once('../configs/configs.php');
 
-$expected = array('codigoservico','valorServico','dataSaida','descServico','gerargarantia','garantia');
-foreach($expected as $key){
-    if(!empty($_POST[$key])){
-        ${$key} = $_POST[$key];
-    }
-    else{
-        ${$key}=" ";
-    }
-}
+extract($_POST);
+
 $chars = array("/");
 $dataSaida = str_replace($chars,"",$dataSaida);
 $valorServico = str_replace($chars,"",$valorServico);

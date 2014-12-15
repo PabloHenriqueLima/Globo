@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="431224819">
+  <component name="DataSourceManagerImpl" format="xml" hash="3421403991">
     <data-source source="LOCAL" name="MySQL - globodb@localhost" uuid="44c287b1-1ebc-4cb3-bbaa-b0396054e05b">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

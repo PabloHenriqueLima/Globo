@@ -177,4 +177,87 @@ $(document).ready(function() {
                 }
             });
         }); // ON SUCCESS;
+
+    // @ Baiba do serviço @ //
+    $('#formBaixa')
+        .bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                codigoservico: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Código do serviço obrigatório.'
+                        },
+                        stringLength:{
+                            min:13,
+                            message:'O código precisa ter 13 caracteres.'
+                        }
+                    }
+                },
+                valorServico: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Digite o valor do serviço.'
+                        }
+                    }
+                },
+                descServico: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Descreva o serviço realizado.'
+                        },
+                        stringLength:{
+                            min:10,
+                            message:'Descrição muito curta.'
+                        }
+                    }
+                }
+            }//fields
+        })
+        .on('success.field.bv', function(e, data) {
+            console.debug(data);
+            if(data.field === "codigoservico"){
+               var codigoServico =  $("#codigoServico").val();
+                $.post(dirAcompPHP+'verificarServico.php',{codigoServico:codigoServico}, function (response) {
+                    if(!response){
+                        $("#formBaixa").data('bootstrapValidator')
+                            .updateStatus(data.field, 'INVALID')
+                            .validateField(data.field)
+                            .updateMessage(data.field,'stringLength','Código não encontrado.');
+                    }else {
+                        var dat = JSON.parse(response);
+                        $("#nomeProdutoBaixa").val(dat.equipamento);
+                        $("#nomeClienteServico").val(dat.cliente);
+                    }
+                });
+            }
+            if (data.bv.isValid()) {
+                data.bv.disableSubmitButtons(false);
+            }
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
+            var $form = $(e.target);
+            setConfig();
+            alertify.confirm("Deseja dar baixa no serviço ?", function (ok) {
+                if (ok) {
+                    var formS = $form.serialize();
+                    console.log(formS);
+                    $.post(dirAcompPHP+"cadastrarEntradaProduto.php", $form.serialize(), function (result) {
+                        window.localStorage.setItem('ultimoCodigo',result);
+                        alertify.alert('Serviço cadastrado com sucesso, anote o código do serviço: ' + result);
+                        $($form).data('bootstrapValidator').resetForm();
+                        $form[0].reset();
+                        $("#verUltimoServico").show();
+
+                    });//post
+                }else {
+                    return false;
+                }
+            });
+        }); // ON SUCCESS;
 });// Jquery ON load event
