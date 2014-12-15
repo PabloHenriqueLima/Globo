@@ -142,3 +142,25 @@ var garantia = function () {
 
 }
 $("#gerargarantia").on("click",garantia);
+
+// @ ativação de statuses @//
+$(".statuses").click(function () {
+    console.debug ($(this));
+});
+
+$("#ativarStatus").click(function () {
+    var  codigoServico = $("#codigoServicoStatus").val();
+    var valorNovoStatus = $("#alterStatus").val();
+    $.post(dirAcompPHP+'ativarStatus.php',{codigoServico:codigoServico,valorNovoStatus:valorNovoStatus}, function (response) {
+        alertify.alert(response);
+    });
+});
+
+
+
+
+
+
+
+
+

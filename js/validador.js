@@ -294,6 +294,7 @@ $(document).ready(function() {
                         $(".statusAtual").text(dat.statusAtual);
                         $("#equipamento").val(dat.equipamento);
                         $(".statuses").show();
+                        $("#ativarStatus ").show();
                     }
                 });
             }
@@ -303,6 +304,7 @@ $(document).ready(function() {
         })
         .on('error.field.bv', function(e, data) {
             $(".statuses").hide();
+            $("#ativarStatus ").hide();
         })
         .on('success.form.bv', function(e) {
             e.preventDefault();

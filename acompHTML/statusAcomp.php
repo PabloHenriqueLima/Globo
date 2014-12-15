@@ -26,7 +26,7 @@
         <label for="nome" class="col-sm-3 control-label">Alterar Status</label>
         <div class="col-sm-7">
             <input type="text" name="alterStatus" class="form-control"  id="alterStatus">
-            <button type="button" id="ativarStatus " class="btn btn-warning statuses">Ativar</button>
+            <button type="button" id="ativarStatus" class="btn btn-warning">Ativar</button>
         </div>
     </div><!--form-->
 </form> <!-- FORMULÁRIO BUSCAR SERVIÇO -->
