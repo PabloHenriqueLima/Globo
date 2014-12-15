@@ -161,6 +161,3 @@ $("#ativarStatus").click(function () {
 
 
 
-
-
-
