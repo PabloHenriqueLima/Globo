@@ -219,7 +219,7 @@ $(document).ready(function() {
             }//fields
         })
         .on('success.field.bv', function(e, data) {
-            console.debug(data);
+           // console.debug(data);
             if(data.field === "codigoservico"){
                var codigoServico =  $("#codigoServico").val();
                 $.post(dirAcompPHP+'verificarServico.php',{codigoServico:codigoServico}, function (response) {
@@ -257,5 +257,54 @@ $(document).ready(function() {
                     return false;
                 }
             });
+        }); // ON SUCCESS;
+    // @ Status do serviço @ //
+    $('#frm_Status')
+        .bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                codigoServicoStatus: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Código do serviço obrigatório.'
+                        },
+                        stringLength:{
+                            min:13,
+                            message:'O código precisa ter 13 caracteres.'
+                        }
+                    }
+                }
+            }//fields
+        })
+        .on('success.field.bv', function(e, data) {
+            if(data.field === "codigoServicoStatus"){
+                var codigoServico =  $("#codigoServicoStatus").val();
+                $.post(dirAcompPHP+'statusServico.php',{codigoServico:codigoServico}, function (response) {
+                    if(!response){
+                        $("#frm_Status").data('bootstrapValidator')
+                            .updateStatus(data.field, 'INVALID')
+                            .validateField(data.field)
+                            .updateMessage(data.field,'stringLength','Código não encontrado.');
+                    }else {
+                        var dat = JSON.parse(response);
+                        $(".statusAtual").text(dat.statusAtual);
+                        $("#equipamento").val(dat.equipamento);
+                        $(".statuses").show();
+                    }
+                });
+            }
+            if (data.bv.isValid()) {
+                data.bv.disableSubmitButtons(false);
+            }
+        })
+        .on('error.field.bv', function(e, data) {
+            $(".statuses").hide();
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
         }); // ON SUCCESS;
 });// Jquery ON load event

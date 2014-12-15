@@ -3,12 +3,16 @@
 
 require_once ('../configs/configs.php');
 
-$codigoServico = $_POST['codstatus'];
+$codigoServico = $_POST['codigoServico'];
 
-$query = "SELECT statusServico,produto from entrada WHERE codservico = ?";
-$sql = $mysqli->prepare($query);
-$sql->bind_param('i',$codigoServico);
-$sql->execute();
+$query = "SELECT statusServico,equipamento from entrada WHERE codigoServico = ?";
+if($sql = $mysqli->prepare($query)){
+    echo $mysqli->error;
+}
+$sql->bind_param('s',$codigoServico);
+if($sql->execute()){
+    echo $mysqli->error;
+}
 $sql->store_result();
 $sql->bind_result($statusAtualServico,$equipamento);
 $sql->fetch();
@@ -17,5 +21,5 @@ if($sql->num_rows >= 1){
     $dadosJSON = json_encode($dados,JSON_UNESCAPED_UNICODE);
     echo $dadosJSON;
 }else{
-    echo "false";
+    echo false;
 }
