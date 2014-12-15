@@ -247,12 +247,10 @@ $(document).ready(function() {
                 if (ok) {
                     var formS = $form.serialize();
                     console.log(formS);
-                    $.post(dirAcompPHP+"cadastrarEntradaProduto.php", $form.serialize(), function (result) {
-                        window.localStorage.setItem('ultimoCodigo',result);
-                        alertify.alert('Serviço cadastrado com sucesso, anote o código do serviço: ' + result);
+                    $.post(dirAcompPHP+"cadastrarBaixa.php", $form.serialize(), function (result) {
+                        alertify.alert(result);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
-                        $("#verUltimoServico").show();
 
                     });//post
                 }else {

@@ -5,27 +5,38 @@ require_once('../configs/configs.php');
 
 extract($_POST);
 
-$chars = array("/");
-$dataSaida = str_replace($chars,"",$dataSaida);
-$valorServico = str_replace($chars,"",$valorServico);
-if($gerargarantia == "x"):
-    $query = "INSERT INTO garantia (servicogarantia, datainicio, periodo) VALUES (?,?,?)";
+$query = "SELECT codigoservico from saida WHERE codigoServico = ?";
+$sql = $mysqli->prepare($query);
+$sql->bind_param('s',$codigoservico);
+$sql-> execute();
+$sql->store_result();
+if($sql->num_rows >= 1) {
+    echo "Já foi dado baixa nesse Serviço.";
+    exit();
+}
+
+
+
+
+if(isset($gerargarantia) and $gerargarantia === "x"):
+    $query = "INSERT INTO garantia (codigoServico, inicio, periodo) VALUES (?,now(),?)";
     if($sql = $mysqli->prepare($query)){}else{echo $mysqli->error;}
-    $sql->bind_param('iii',$codigoservico,$dataSaida,$garantia);
+    $sql->bind_param('si',$codigoservico,$garantia);
     if($sql->execute()){}else{echo $mysqli->error;}
 else:
 endif;
-
-$query = "INSERT INTO saida (codigoservico, preco, databaixa, descbaixa, garantia) VALUES (?,?,?,?,?)";
+if(!isset($gerargarantia)){
+    $gerargarantia = " ";
+}
+$query = "INSERT INTO saida (codigoServico, preco, dataDaBaixa, descBaixa, garantia) VALUES (?,?,now(),?,?)";
 if($sql = $mysqli->prepare($query)){}else{echo $mysqli->error;}
-$sql->bind_param('iiiss',$codigoservico,$valorServico,$dataSaida,$descServico,$gerargarantia);
+$sql->bind_param('ssss',$codigoservico,$valorServico,$descServico,$gerargarantia);
 if ($sql->execute()):
-    else:
-        echo $mysqli->error;
-        endif;
-$query = "UPDATE entrada SET finalizado = ? WHERE codservico=?";
+    else: echo $mysqli->error; endif;
+
+$query = "UPDATE entrada SET finalizado = ? WHERE codigoServico=?";
 $sql->prepare($query);
 $x = 'x';
 $sql->bind_param('si',$x,$codigoservico);
 $sql->execute();
-echo 'Sucesso.';
+echo 'A baixa foi registrada com sucesso no sistema !';
