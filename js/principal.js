@@ -171,30 +171,92 @@ $(".statuses").click(function () {
 });
 
 // @ Gerenciamento de serviços @ //
-$(document).on("click","#btn_editar", function () {
-    var idCLiente = $(this).attr("idCliente");
-    alertify.confirm("Deseja editar os dados do cliente ?", function (ok) {
-        if (ok) {
-            $.post(dirClientePHP+'editarCliente.php',{idCliente:idCLiente}).done(function (result) {
-                objResult = JSON.parse(result);
-                objResult.key = function (n) {
-                    return this[Object.keys(this)[n]];
-                }
-                var formEditar = $("#frm_editarCliente").show().find('input');
-                var i = 1;
-                $.each(formEditar, function (index,e) {
-                    e.value = objResult.key(i);
-                    e.disabled = false;
-                    i++;
+// @ Visualizando Serviço  @ //
+$("#verServicoS").click(function (){
+    var codigoServico = $("#cosigoServicoS").val();
+    if(codigoServico.length < 13 || !codigoServico ) {
+        alertify.alert('ERRO: Código Inválido.')
+    }else {
+        alertify.confirm("Deseja ver os dados do serviço ?", function (ok) {
+            if (ok) {
+                $("#frm_editarServico").show();
+                $.post(dirAcompPHP + 'editarServico.php', {codigoServico: codigoServico}).done(function (result){
+                    console.log(result);
+
+                    if(!result){
+                        console.log('Deu um erro lá');
+                    }else {
+                    objResult = JSON.parse(result);
+                    objResult.key = function (n) {
+                        return this[Object.keys(this)[n]];
+                    }
+                    var formEditar = $("#frm_editarServico").show().find($('input:text, textarea'));
+                    var i = 0;
+                    $.each(formEditar, function (index, e) {
+                        e.value = objResult.key(i);
+                        e.disabled = true;
+                        i++;
+                    });
+
+                    }
                 });
-                $("#btn_cadastroB").show().attr("idcliente",objResult.key(0));
 
 
-            });
-        }else {
-            return false;
-        }
-    });
+            } else {
+                return false;
+            }
+        });
+    } //else
 });
 
+// @ Editando serviço @ //
+$("#editarServicoS").click(function (){
+    var codigoServico = $("#cosigoServicoS").val();
+    if(codigoServico.length < 13 || !codigoServico ) {
+        alertify.alert('ERRO: Código Inválido.')
+    }else {
+        alertify.confirm("Deseja editar os dados do serviço ?", function (ok) {
+            if (ok) {
+                $("#frm_editarServico").show();
+                $.post(dirAcompPHP + 'editarServico.php', {codigoServico: codigoServico}).done(function (result){
+                    console.log(result);
 
+                    if(!result){
+                        console.log('Deu um erro lá');
+                    }else {
+                        objResult = JSON.parse(result);
+                        objResult.key = function (n) {
+                            return this[Object.keys(this)[n]];
+                        }
+                        var formEditar = $("#frm_editarServico").show().find($('input:text, textarea'));
+                        var i = 0;
+                        $.each(formEditar, function (index, e) {
+                            e.value = objResult.key(i);
+                            if(i == 1) {
+                                e.disabled = true
+                            }else{
+                                e.disabled = false;
+                            }
+                            i++;
+                        });
+
+                    }
+                });
+
+
+            } else {
+                return false;
+            }
+        });
+    } //else
+});
+// @ Salvar @ //
+$("#salvarServicoS").click(function (e) {
+    e.preventDefault();
+    var codigoServico = $("#cosigoServicoS").val();
+    var formValues = $("#frm_editarServico").serialize()+'&codigoServico='+codigoServico;
+    console.log(formValues);
+    $.post(dirAcompPHP+'atualizarServico.php',formValues,function (response) {
+        alertify.alert(response);
+    });
+});

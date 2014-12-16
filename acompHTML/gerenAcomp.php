@@ -1,7 +1,5 @@
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
-
 <h4  class="text-center">Gerenciar Serviços</h4>
-
 <form class="form-horizontal" method="post" id="frm_editarServico"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
         <label for="equipamentoS" class="col-sm-2 control-label">Equipamento</label>
@@ -11,7 +9,7 @@
     </div><!--form-->
     <div class="form-group">
         <label for="dataEntradaS" class="col-sm-4 control-label">Data de Entrada</label>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <input type="text" name="dataEntradaS" class="form-control"  id="dataEntradaS" placeholder="">
         </div>
     </div><!--form-->
@@ -24,13 +22,13 @@
     <div class="form-group">
         <label for="carregadorS" class="col-sm-4 control-label">Com carregador?</label>
         <div class="col-sm-2">
-            <input type="text" name="carregadorS" data-mask="a?" class="form-control" id="carregadorS" placeholder="">
+            <input type="text" name="carregadorS" data-mask="S" class="form-control" id="carregadorS" placeholder="">
         </div>
     </div><!--form-->
     <div class="form-group">
         <label for="caboDadosS" class="col-sm-4 control-label">Com cabo de dados?</label>
         <div class="col-sm-2">
-            <input type="text" name="caboDadosS"  data-mask="a?" class="form-control" id="caboDadosS" placeholder="">
+            <input type="text" name="caboDadosS" data-mask="S"  class="form-control" id="caboDadosS" placeholder="">
         </div>
     </div><!--form-->
     <div class="form-group">
@@ -54,16 +52,16 @@
         </div>
 </form> <!-- FORMULÁRIO CADASTRAR CLIENTE -->
 
-<form class="form-horizontal" method="post" id="formgerenciar"><!-- FORMULÁRIO CADASTRO -->
+<form class="form-horizontal" method="post" id="frm_gerenciar"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
         <div class="col-sm-6">
             <div class="input-group">
                 <span class="input-group-addon">Código de serviço-></span>
-                <input type="text" id="codgeren" name="codgeren" class="form-control" maxlength="10" placeholder="Código do serviço">
+                <input type="text" id="cosigoServicoS" name="cosigoServicoS" class="form-control" maxlength="13" placeholder="Código do serviço">
             </div>
         </div>
-        <button class="btn btn-primary" name="verServicoS" id="verServicoS">Ver serviço</button>
-        <button class="btn btn-warning" name="editarServicoS" id="editarServicoS">Editar</button>
-        <button class="btn btn-danger" name="excluirServicoS" id="excluirServicoS">Excluir</button>
+        <button class="btn btn-primary" type="button" id="verServicoS">Ver serviço</button>
+        <button class="btn btn-warning" type="button"  id="editarServicoS">Editar</button>
+        <button class="btn btn-danger" type="button" id="excluirServicoS">Excluir</button>
     </div>
 </form>
