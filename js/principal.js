@@ -64,7 +64,7 @@ $(document).on("click","#btn_editar", function () {
             return false;
         }
     });
-})
+});
 // @ BOTÃO SALVAR @ //
 $(document).on("click","#btn_cadastroB", function (e) {
     this.disabled = true;
@@ -170,6 +170,31 @@ $(".statuses").click(function () {
     );
 });
 
+// @ Gerenciamento de serviços @ //
+$(document).on("click","#btn_editar", function () {
+    var idCLiente = $(this).attr("idCliente");
+    alertify.confirm("Deseja editar os dados do cliente ?", function (ok) {
+        if (ok) {
+            $.post(dirClientePHP+'editarCliente.php',{idCliente:idCLiente}).done(function (result) {
+                objResult = JSON.parse(result);
+                objResult.key = function (n) {
+                    return this[Object.keys(this)[n]];
+                }
+                var formEditar = $("#frm_editarCliente").show().find('input');
+                var i = 1;
+                $.each(formEditar, function (index,e) {
+                    e.value = objResult.key(i);
+                    e.disabled = false;
+                    i++;
+                });
+                $("#btn_cadastroB").show().attr("idcliente",objResult.key(0));
 
+
+            });
+        }else {
+            return false;
+        }
+    });
+});
 
 
