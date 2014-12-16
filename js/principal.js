@@ -144,19 +144,31 @@ var garantia = function () {
 $("#gerargarantia").on("click",garantia);
 
 // @ ativação de statuses @//
-$(".statuses").click(function () {
-    console.debug ($(this));
-});
 
+var atualizaStatus = function (codigoServico) {
+    $.post(dirAcompPHP+'statusServico.php',{codigoServico:codigoServico}, function (response) {
+        var dat = JSON.parse(response);
+        $(".statusAtual").text(dat.statusAtual);
+    });
+}
 $("#ativarStatus").click(function () {
     var  codigoServico = $("#codigoServicoStatus").val();
     var valorNovoStatus = $("#alterStatus").val();
     $.post(dirAcompPHP+'ativarStatus.php',{codigoServico:codigoServico,valorNovoStatus:valorNovoStatus}, function (response) {
         alertify.alert(response);
+        atualizaStatus(codigoServico);
+
     });
 });
 
-
+$(".statuses").click(function () {
+        var  codigoServico = $("#codigoServicoStatus").val();
+        var textoDiv = $(this).parent().find("span").text();
+        $.post(dirAcompPHP+ "ativarStatus.php",{valorNovoStatus:textoDiv,codigoServico:codigoServico},function (response) {
+            atualizaStatus(codigoServico);
+        }
+    );
+});
 
 
 
