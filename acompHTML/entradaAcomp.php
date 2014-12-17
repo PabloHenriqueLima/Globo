@@ -3,12 +3,10 @@
 
 <form class="form-horizontal" method="post" id="frm_entradaServico"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
-        <div class="col-sm-10">
+        <div class="col-sm-10 col-sm-offset-2">
             <div class="input-group">
-                <label for="slct_buscarCliente"></label>
-            <select data-placeholder="Clique e digite o nome do cliente" name="slct_buscarCliente" id="slct_buscarCliente" class="slct_buscarCliente" tabindex="1">
-                <option value=""></option>
-            </select>
+                    <input type="text"  name="search" id="search" placeholder="Buscar Cliente">
+
             </div>
         </div>
     </div>

@@ -98,24 +98,16 @@ $(document).on("click","#btn_deletar", function () {
 
 });
 // @ BUSCAR CLIENTE NA ENTRADA DO PRODUTO @ //
-$(function () {
-    //
-    var options2 = {
-        callback: function (busca) {
-            $.post(dirAcompPHP + "buscarClienteEntrada.php",{busca:busca}).done(function (response) {
-              // console.debug(response);
-                if(response){
-                    $(".slct_buscarCliente").empty().append(response).trigger("chosen:updated");
-                }
-            });
-        },
-        wait: 300,
-        captureLength: 4
-    }
-    $(".slct_buscarCliente").chosen();
-    var buscaCliente = $(".chosen-search").find('input');
-    buscaCliente.typeWatch( options2 );
+
+$(document).ready(function(){
+    $("#search").typeahead({
+        name : 'sear',
+        remote: {
+            url : dirAcompPHP+'buscarClienteEntrada.php?nomeCliente=%QUERY'
+        }
+    });
 });
+
 // @ CARTUCHO @ //
 var cartuchos = function () {
     if ($("#comcartucho").prop("checked")) {

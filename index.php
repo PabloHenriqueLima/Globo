@@ -62,7 +62,7 @@
 <script type="text/javascript" src="js/plugins/alertify.js"></script>
 <script type="text/javascript" src="js/plugins/bootstrapValidator.min.js"></script>
 <script type="text/javascript" src="js/language/pt_BR.js"></script>
-<script src="js/plugins/chosen.jquery.js"></script>
+<script src="js/plugins/type.js"></script>
 <script type="text/javascript" src="js/validador.js"></script>
 <script type="text/javascript" src="js/principal.js"></script>
 
