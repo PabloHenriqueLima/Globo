@@ -2,7 +2,14 @@
 require_once ('../configs/configs.php');
 
 $codigoServico = $_POST['codigoServico'];
-
+$query = "SELECT idCliente from entrada WHERE codigoServico = ?";
+$sql = $mysqli->prepare($query);
+$sql->bind_param('s',$codigoServico);
+$sql->execute();
+$sql->store_result();
+if(!$sql->num_rows >= 1 ){
+    echo  false;
+}else {
 
 $query = "SELECT equipamento,dataEntrada,descDefeito,carregador,caboDados,cartuchoPreto,cartuchoColorido,finalizado FROM entrada WHERE codigoServico=?";
 $sql = $mysqli->prepare($query);
@@ -18,3 +25,4 @@ if($sql->num_rows >= 1){
 }else{
     echo false;
 }
+} // else

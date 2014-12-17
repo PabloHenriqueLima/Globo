@@ -179,12 +179,11 @@ $("#verServicoS").click(function (){
     }else {
         alertify.confirm("Deseja ver os dados do serviço ?", function (ok) {
             if (ok) {
-                $("#frm_editarServico").show();
                 $.post(dirAcompPHP + 'editarServico.php', {codigoServico: codigoServico}).done(function (result){
                     console.log(result);
 
                     if(!result){
-                        console.log('Deu um erro lá');
+                        alertify.alert('Serviço não cadastrado.');
                     }else {
                     objResult = JSON.parse(result);
                     objResult.key = function (n) {
@@ -217,12 +216,11 @@ $("#editarServicoS").click(function (){
     }else {
         alertify.confirm("Deseja editar os dados do serviço ?", function (ok) {
             if (ok) {
-                $("#frm_editarServico").show();
                 $.post(dirAcompPHP + 'editarServico.php', {codigoServico: codigoServico}).done(function (result){
                     console.log(result);
 
                     if(!result){
-                        console.log('Deu um erro lá');
+                        alertify.alert('Serviço não cadastrado.');
                     }else {
                         objResult = JSON.parse(result);
                         objResult.key = function (n) {
@@ -250,6 +248,24 @@ $("#editarServicoS").click(function (){
         });
     } //else
 });
+// @ Excluir serviço @ //
+$("#excluirServicoS").click(function (){
+    var codigoServico = $("#cosigoServicoS").val();
+    if(codigoServico.length < 13 || !codigoServico ) {
+        alertify.alert('ERRO: Código Inválido.')
+    }else {
+        alertify.confirm("Deseja EXCLUIR os dados do serviço ?", function (ok) {
+            if (ok) {
+                        $.post(dirAcompPHP + 'excluirServico.php', {codigoServico: codigoServico}).done(function (result){
+                            $("#frm_editarServico").hide();
+                            alertify.alert(result);
+                        });
+                    } else {
+                return false;
+            }
+        });
+    } //else
+});
 // @ Salvar @ //
 $("#salvarServicoS").click(function (e) {
     e.preventDefault();
@@ -260,3 +276,4 @@ $("#salvarServicoS").click(function (e) {
         alertify.alert(response);
     });
 });
+    
