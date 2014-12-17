@@ -494,7 +494,7 @@
                 };
             return c.mixin(b.prototype, d, {
                 _handleMouseenter: function() {
-                    this.isMouseOverDropdown = !0
+                    this.isMouseOverDropdown = !0;
                 },
                 _handleMouseleave: function() {
                     this.isMouseOverDropdown = !1
@@ -505,7 +505,7 @@
                 },
                 _handleSelection: function(b) {
                     var c = a(b.currentTarget);
-                    this.trigger("suggestionSelected", e(c))
+                    this.trigger("suggestionSelected", e(c));
                 },
                 _show: function() {
                     this.$menu.css("display", "block")
@@ -702,7 +702,6 @@
                 },
                 _setInputValueToQuery: function() {
                     this.inputView.setInputValue(this.inputView.getQuery());
-                    console.log('Faz algo')
                 },
                 _setInputValueToSuggestionUnderCursor: function(a) {
                     var b = a.data;
