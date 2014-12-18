@@ -39,7 +39,7 @@
             <div class="col-sm-4">
                 <input type="tel" name="telefoneB" data-mask="(00)0000-0000" class="form-control" id="ipt_telefoneBCliente" placeholder="Telefone 2">
             </div>
-        </div><!--form--><br>
+        </div><!--form-->
         <div class="form-group">
             <div class="col-sm-12 col-sm-offset-4">
                 <div class="comandosCadastro">

@@ -20,7 +20,7 @@ $(document).on("click","#btn_visualizar", function () {
     alertify.confirm("Deseja visualizar os dados do cliente ?", function (ok) {
         if (ok) {
             $.post(dirClientePHP+'editarCliente.php',{idCliente:idCliente}).done(function (result) {
-                objResult = JSON.parse(result);
+               var objResult = JSON.parse(result);
                 objResult.key = function (n) {
                     return this[Object.keys(this)[n]];
                 }
@@ -45,7 +45,7 @@ $(document).on("click","#btn_editar", function () {
     alertify.confirm("Deseja editar os dados do cliente ?", function (ok) {
         if (ok) {
             $.post(dirClientePHP+'editarCliente.php',{idCliente:idCLiente}).done(function (result) {
-                objResult = JSON.parse(result);
+              var objResult = JSON.parse(result);
                 objResult.key = function (n) {
                     return this[Object.keys(this)[n]];
                 }
@@ -177,7 +177,7 @@ $("#verServicoS").click(function (){
                     if(!result){
                         alertify.alert('Serviço não cadastrado.');
                     }else {
-                    objResult = JSON.parse(result);
+                    var objResult = JSON.parse(result);
                     objResult.key = function (n) {
                         return this[Object.keys(this)[n]];
                     }
@@ -214,7 +214,7 @@ $("#editarServicoS").click(function (){
                     if(!result){
                         alertify.alert('Serviço não cadastrado.');
                     }else {
-                        objResult = JSON.parse(result);
+                      var objResult = JSON.parse(result);
                         objResult.key = function (n) {
                             return this[Object.keys(this)[n]];
                         }
@@ -258,7 +258,7 @@ $("#excluirServicoS").click(function (){
         });
     } //else
 });
-// @ Salvar @ //
+// @ Salvar  Serviço @ //
 $("#salvarServicoS").click(function (e) {
     e.preventDefault();
     var codigoServico = $("#cosigoServicoS").val();
@@ -267,5 +267,30 @@ $("#salvarServicoS").click(function (e) {
     $.post(dirAcompPHP+'atualizarServico.php',formValues,function (response) {
         alertify.alert(response);
     });
+});
+$("#verGarantiaG").click(function(){
+    var codigoServico = $("#codigoServicoG").val();
+    if(codigoServico.length < 13 || !codigoServico ) {
+        alertify.alert('ERRO: Código Inválido.')
+    }else {
+        $.post(dirGarantiaPHP+'garantia.php',{codigoServico:codigoServico},function(response){
+            if(!response){
+                alertify.alert('Esse serviço não foi garantido.')
+            }else {
+               var objResult = JSON.parse(response);
+                objResult.key = function (n) {
+                    return this[Object.keys(this)[n]];
+                }
+                var formEditar = $("#frm_garantia").show().find($('input:text, textarea'));
+                var i = 1;
+                $.each(formEditar, function (index, e) {
+                    e.value = objResult.key(i);
+                    e.disabled = true;
+
+                    i++;
+                });
+            }
+        });
+    }
 });
     

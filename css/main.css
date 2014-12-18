@@ -123,6 +123,9 @@ td{
 #ativarStatus{
     display: none;
 }
+#frm_garantia {
+    display: none;
+}
 
 /* CUSTOM CSS FOR TYPEHEAD */
 .tt-query,

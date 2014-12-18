@@ -3,4 +3,4 @@
 
 define('dirClienteHtml','clienteHTML/');
 define ('dirAcompHtml','acompHTML/');
-define('dirGaranHtml','garanHtml/');
+define('dirGaranHtml','garantiaHTML/');

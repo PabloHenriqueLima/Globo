@@ -1,6 +1,7 @@
 // CONTANTES E FUNÇÕES IMPORTANTES //
 dirClientePHP = 'clientePHP/';
 dirAcompPHP = 'acompPHP/';
+dirGarantiaPHP = 'garantiaPHP/';
 
 function setConfig (){
     alertify.set({
