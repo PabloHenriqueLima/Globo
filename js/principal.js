@@ -293,17 +293,16 @@ $("#verGarantiaG").click(function(){
     }
 });
 $("#editarGarantiaG").click(function () {
-    var codigoServico = $("#codigoServicoG").val();
+    var codigoServico = $("#codigoServicoG").val()
     if(codigoServico.length < 13 || !codigoServico ) {
         alertify.alert('ERRO: Código Inválido.')
     }else {
         $.post(dirGarantiaPHP+'garantia.php',{codigoServico:codigoServico,controle:true},function(response){
-            console.log('Log: '+response);
             if(!response){
                 alertify.alert('Esse serviço não foi garantido.')
             }else {
-                $("#frm_garantia").hide();
-                $("#frm_editarGarantia").show();
+                $("#frm_garantia").hide()
+                $("#frm_editarGarantia").show()
             }
         });
     }
@@ -316,3 +315,23 @@ $("#confirmarG").click(function () {
         alertify.alert('A garantia foi definida para '+response + ' dias após a finalização do serviço.')
     });
 });
+$("#excluirGarantiaG").click(function () {
+    var codigoServico = $("#codigoServicoG").val();
+    if(codigoServico.length < 13 || !codigoServico ) {
+        alertify.alert('ERRO: Código Inválido.')
+    }else {
+        alertify.confirm("Deseja mesmo remover a garantia desse serviço ?", function (ok) {
+            if(ok) {
+                $.post(dirGarantiaPHP+'excluirGarantia.php',{codigoServico:codigoServico},function(response){
+                    if(!response){
+                        alertify.alert('Garantia não encontrada.')
+                    }else {
+                        alertify.alert('Garantia deletada com sucesso.')
+                    }
+                });
+
+            }//if OK
+        }) // confirm
+    }
+});
+
