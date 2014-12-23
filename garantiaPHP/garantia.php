@@ -2,6 +2,9 @@
 require_once('../configs/configs.php');
 
 $codigoServico = $_POST['codigoServico'];
+if(isset($_POST['controle'])){
+    $controle = $_POST['controle'];
+}
 
 $query =  "SELECT inicio,periodo from garantia WHERE codigoServico = ?";
 $sql = $mysqli->prepare($query);
@@ -11,6 +14,10 @@ $sql->store_result();
 $sql->bind_result($dataInicio,$periodo);
 $sql->fetch();
 if($sql->num_rows >=1) {
+    if($controle){
+        echo true;
+        exit();
+    }
     $query = "SELECT idCliente,equipamento,descDefeito,preco,DescBaixa FROM entrada INNER JOIN saida on entrada.codigoServico = saida.codigoServico WHERE entrada.codigoServico = ?";
     $sql->prepare($query);
     $sql->bind_param('s', $codigoServico);

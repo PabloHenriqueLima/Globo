@@ -126,7 +126,10 @@ td{
 #frm_garantia {
     display: none;
 }
-
+#frm_editarGarantia{
+    display: none;
+    margin-top: 15px;
+}
 /* CUSTOM CSS FOR TYPEHEAD */
 .tt-query,
 .tt-hint {

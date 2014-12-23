@@ -286,11 +286,29 @@ $("#verGarantiaG").click(function(){
                 $.each(formEditar, function (index, e) {
                     e.value = objResult.key(i);
                     e.disabled = true;
-
                     i++;
                 });
             }
         });
     }
 });
-    
+$("#editarGarantiaG").click(function () {
+    var codigoServico = $("#codigoServicoG").val();
+    if(codigoServico.length < 13 || !codigoServico ) {
+        alertify.alert('ERRO: Código Inválido.')
+    }else {
+        $.post(dirGarantiaPHP+'garantia.php',{codigoServico:codigoServico,controle:true},function(response){
+            console.log('Log: '+response);
+            if(!response){
+                alertify.alert('Esse serviço não foi garantido.')
+            }else {
+                $("#frm_garantia").hide();
+                $("#frm_editarGarantia").show();
+            }
+        });
+    }
+});
+
+$("#confirmarG").click(function () {
+    $.post();
+});

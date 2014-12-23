@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/alertify.core.css"/>
     <link rel="stylesheet" href="css/alertify.default.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.css"/>
-    <link rel="stylesheet" href="css/chosen.css"/>
 
 </head>
 <body>

@@ -575,7 +575,6 @@ FileETag None
 
   # CSS
     ExpiresByType text/css                              "access plus 1 year"
-
   # Data interchange
     ExpiresByType application/json                      "access plus 0 seconds"
     ExpiresByType application/ld+json                   "access plus 0 seconds"

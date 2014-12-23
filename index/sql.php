@@ -11,4 +11,4 @@
 //    echo "Inserido \n".$i;
 //}
 
-echo uniqid();
+echo time();

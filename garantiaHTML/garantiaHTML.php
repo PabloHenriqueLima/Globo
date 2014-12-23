@@ -14,15 +14,19 @@
 
 <form class="form-horizontal" method="post" id="frm_editarGarantia"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
-        <label for="novoPeriodo" class="col-sm-2 control-label">+ Dias</label>
+        <label for="novoPeriodo" class="col-sm-3 control-label">Definir Garantia</label>
         <div class="col-sm-3">
-            <input type="text" name="novoPeriodo" maxlength="60" class="form-control" id="novoPeriodo" placeholder="+Dias">
+            <input type="text" name="novoPeriodo" data-mask="999" maxlength="60" class="form-control" id="novoPeriodo" placeholder="Dias">
         </div>
     </div><!--form-->
+
+        <div class="form-group">
+            <label for="novoPeriodo" class="col-sm-3 control-label"></label>
+             <div class="col-sm-3">
+                 <button type="button" id="confirmarG" class="btn btn-primary">Confirmar</button>
+             </div>
+        </div>
 </form>
-
-
-
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
 <form class="form-horizontal" method="post" id="frm_garantia"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
