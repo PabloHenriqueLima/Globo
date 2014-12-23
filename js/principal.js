@@ -310,5 +310,9 @@ $("#editarGarantiaG").click(function () {
 });
 
 $("#confirmarG").click(function () {
-    $.post();
+    var codigoServico = $("#codigoServicoG").val();
+    var novoPeriodo = $("#novoPeriodo").val();
+    $.post(dirGarantiaPHP+'atualizarGarantia.php',{codigoServico:codigoServico,novoPeriodo:novoPeriodo}, function (response) {
+        alertify.alert('A garantia foi definida para '+response + ' dias após a finalização do serviço.')
+    });
 });
