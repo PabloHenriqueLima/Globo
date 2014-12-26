@@ -1,6 +1,6 @@
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
 
-<div role="tabpanel" class="tab-pane fade" id="vendas"> <!--NAVEGAÇÃO VENDAS -->
+<div role="tabpanel" class="tab-pane" id="vendas"> <!--NAVEGAÇÃO VENDAS -->
     <div class="content-home">
         <!--BOTÕES-->
         <div class="btn-grupo">

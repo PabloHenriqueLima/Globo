@@ -24,7 +24,7 @@
 <!--[if lt IE 7]>
 <p class="browsehappy">Você está usando um navegador <strong> desatualizado</strong>
     Por favor <a href="http://browsehappy.com/">Atualize seu navegador</a> para melhorar sua experiência.</p>
-<![endif]--> <!-- BrOW-->
+<![endif]-->
     <header class="centro" id="menu">
         <ul class="nav nav-tabs" role="tablist" id="menuPrincipal">
              <li role="presentation"><a href="#clientes" role="tab" data-toggle="tab">Clientes</a></li>
@@ -32,7 +32,6 @@
              <li role="presentation"><a href="#abagarantia" role="tab" data-toggle="tab">Garantia</a></li>
              <li role="presentation"><a href="#produtos" role="tab" data-toggle="tab">Produtos</a></li>
              <li role="presentation"><a href="#vendas" role="tab" data-toggle="tab">Vendas</a></li>
-             <li role="presentation"><a href="#estatisticas" role="tab" data-toggle="tab">Estatísticas</a></li>
         </ul>
     </header><!-- NAVEGAÇÃO MENU PRINCIPAL-->
 <div class="centro">
@@ -42,7 +41,7 @@
         <?php include "acompanhamento.php" ?>
         <?php include "garantia.php" ?>
         <?php include "produtos.php" ?>
-        <?php include "estatisticas.php" ?>
+        <?php include "vendas.php" ?>
 
 </div> <!-- TAB COM CONTEUDO DO MENU -->
 </div>
@@ -59,11 +58,10 @@
 <script type="text/javascript" src="js/plugins/typewatch.js"></script>
 <script type="text/javascript" src="js/plugins/jquery.mask.js"></script>
 <script type="text/javascript" src="js/plugins/alertify.js"></script>
+<script src="js/plugins/type.js"></script>
 <script type="text/javascript" src="js/plugins/bootstrapValidator.min.js"></script>
 <script type="text/javascript" src="js/language/pt_BR.js"></script>
-<script src="js/plugins/type.js"></script>
 <script type="text/javascript" src="js/validador.js"></script>
 <script type="text/javascript" src="js/principal.js"></script>
-
 </body>
 </html>

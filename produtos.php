@@ -11,10 +11,7 @@
 
         <!--CONTEUDO PARA CADA BOTÃO -->
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane" id="cadestoque">
-
-
-            </div>
+            <div role="tabpanel" class="tab-pane" id="cadestoque">Cadastrar Estoque</div>
             <div role="tabpanel" class="tab-pane" id="gerenprodutos">Geranciar Produtos</div>
             <div role="tabpanel" class="tab-pane" id="vizuprodutos">Vizualizar Produtos </div>
         </div><!--CONTEUDO PARA CADA BOTÃO -->
