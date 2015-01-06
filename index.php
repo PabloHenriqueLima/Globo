@@ -28,7 +28,7 @@
     <header class="centro" id="menu">
         <ul class="nav nav-tabs" role="tablist" id="menuPrincipal">
              <li role="presentation"><a href="#clientes" role="tab" data-toggle="tab">Clientes</a></li>
-             <li role="presentation"><a href="#acompanhamento" role="tab" data-toggle="tab">Acompanhamento</a></li>
+             <li role="presentation"><a href="#acompanhamento" role="tab" data-toggle="tab">Serviço</a></li>
              <li role="presentation"><a href="#abagarantia" role="tab" data-toggle="tab">Garantia</a></li>
              <li role="presentation"><a href="#produtos" role="tab" data-toggle="tab">Produtos</a></li>
              <li role="presentation"><a href="#vendas" role="tab" data-toggle="tab">Vendas</a></li>

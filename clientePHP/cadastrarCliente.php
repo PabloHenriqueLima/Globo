@@ -1,7 +1,8 @@
 <?php
 
 /** Jesus Cristo - O Senhor e Salvador da Terra. **/
-require_once ('../configs/configs.php');
+require_once('../configs/localMysql.php');
+
 extract($_POST);
 $query = "INSERT INTO clientes (nomeCliente, cpfCliente, endCliente, bairroCliente, cepCliente, telefoneCliente, telelefoneBCliente, dataCadastroCliente) VALUES (?,?,?,?,?,?,?,now())";
 if (!$sql_send = $mysqli->prepare($query)){
@@ -12,3 +13,4 @@ if ($sql_send->execute()){
     $sql_send->store_result();
    echo "Cliente Cadastrado";
 }
+

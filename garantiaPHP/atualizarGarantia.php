@@ -1,6 +1,6 @@
 <?php
 /** Jesus Cristo - O Senhor e Salvador da Terra. **/
-require_once('../configs/configs.php');
+require_once('../configs/localMysql.php');
 extract($_POST);
 
 $query = "UPDATE garantia set periodo = ? WHERE codigoServico = ?";

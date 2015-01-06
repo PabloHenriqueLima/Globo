@@ -1,5 +1,5 @@
 <?php
-require_once ('../configs/configs.php');
+require_once('../configs/localMysql.php');
 
 $codigoServico = $_POST['codigoServico'];
 

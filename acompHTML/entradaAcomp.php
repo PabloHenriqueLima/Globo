@@ -11,9 +11,15 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="nome" class="col-sm-2 control-label">Produto</label>
+        <label for="nome" class="col-sm-2 control-label">Equipamento</label>
         <div class="col-sm-8">
-            <input type="text" name="nomeProduto" class="form-control" id="nomeProduto" placeholder="Produto">
+            <input type="text" name="nomeProduto" class="form-control" id="nomeProduto" placeholder="Equipamento">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nome" class="col-sm-2 control-label">S/N</label>
+        <div class="col-sm-4">
+            <input type="text" name="numeroSerie" class="form-control" id="numeroSerie" placeholder="Número de Série">
         </div>
     </div>
     <div class="form-group">

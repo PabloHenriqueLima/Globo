@@ -1,7 +1,7 @@
 <?php
 /** Jesus Cristo - O Senhor e Salvador da Terra. **/
 
-require_once ('../configs/configs.php');
+require_once('../configs/localMysql.php');
 
 $busca = $_POST['buscarCliente'];
 $query = "SELECT * FROM clientes WHERE nomeCliente LIKE CONCAT('%', ? , '%')";

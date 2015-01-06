@@ -24,6 +24,7 @@
       <column name="codigoServico" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
       <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="equipamento" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="serie" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="dataEntrada" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="descDefeito" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="carregador" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
@@ -38,7 +39,7 @@
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="codigoServico" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
       <column name="inicio" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="periodo" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
+      <column name="periodo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="saida" schema="" catalog="globodb" type="TABLE">

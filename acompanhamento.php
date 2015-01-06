@@ -4,8 +4,8 @@
     <div class="content-home">
         <!--BOTÕES-->
         <div class="btn-grupo">
-            <button type="button" class="btn btn-primary" href="#entrada"  data-toggle="tab">Entrada de Serviço</button>
-            <button type="button" class="btn btn-primary" href="#saida"  data-toggle="tab">Baixa de Serviço</button>
+            <button type="button" class="btn btn-primary" href="#entrada"  data-toggle="tab">Ordem de Serviço</button>
+            <button type="button" class="btn btn-primary" href="#saida"  data-toggle="tab">Baixa da Ordem</button>
             <button type="button" class="btn btn-primary" href="#status"  data-toggle="tab">Status do serviço</button>
             <button type="button" class="btn btn-primary" href="#verservico"  data-toggle="tab">Gerenciar Serviços</button>
         </div>
