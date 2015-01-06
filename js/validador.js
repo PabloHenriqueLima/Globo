@@ -9,7 +9,7 @@ function setConfig (){
             ok     : "Sim",
             cancel : "Agora não"
         },
-        delay : 10000,
+        delay : 10,
         buttonReverse : false,
         buttonFocus   : "Sim"
     });
@@ -97,7 +97,7 @@ $(document).ready(function() {
             alertify.confirm("Cadastrar cliente ?", function (ok) {
                 if (ok) {
                     $.post(dirClientePHP+"cadastrarCliente.php", $form.serialize(), function (result) {
-                        alertify.success(result);
+                        alert(result);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
                     });

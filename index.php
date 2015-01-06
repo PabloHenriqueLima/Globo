@@ -11,7 +11,7 @@
     <title>Globo Informática System</title>
     <meta name="description" content="Globo Sys">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="index/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css"/>
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/bootstrapValidator.css"/>
 
 </head>
+
 <body>
 <!--[if lt IE 7]>
 <p class="browsehappy">Você está usando um navegador <strong> desatualizado</strong>
@@ -30,8 +31,8 @@
              <li role="presentation"><a href="#clientes" role="tab" data-toggle="tab">Clientes</a></li>
              <li role="presentation"><a href="#acompanhamento" role="tab" data-toggle="tab">Serviço</a></li>
              <li role="presentation"><a href="#abagarantia" role="tab" data-toggle="tab">Garantia</a></li>
-             <li role="presentation"><a href="#produtos" role="tab" data-toggle="tab">Produtos</a></li>
-             <li role="presentation"><a href="#vendas" role="tab" data-toggle="tab">Vendas</a></li>
+<!--             <li role="presentation"><a href="#produtos" role="tab" data-toggle="tab">Produtos</a></li>-->
+<!--             <li role="presentation"><a href="#vendas" role="tab" data-toggle="tab">Vendas</a></li>-->
         </ul>
     </header><!-- NAVEGAÇÃO MENU PRINCIPAL-->
 <div class="centro">
