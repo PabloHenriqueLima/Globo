@@ -1,8 +1,7 @@
 <?php
 //Jesus é Rei
-// Include the main TCPDF library (search for installation path).
+
 require_once('MYPDF.php');
-// create new PDF document
 $pdf = new MYPDF();
 
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -13,5 +12,11 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 // -------------------------------------------------------------------
 
+if(!isset($_GET['ordem']) OR empty($_GET['ordem'])) die('Serviço não fornecido');
+$ordem = $_GET['ordem'];
+
 $pdf->AddPage();
+$pdf->writeHTML('<br/><br/><hr />');
+$pdf->writeHTML("<h4>ORDEM DE SERVIÇO n°: $ordem  </h4>");;
+
 $pdf->Output();
