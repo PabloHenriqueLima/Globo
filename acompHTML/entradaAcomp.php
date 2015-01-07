@@ -40,7 +40,6 @@
                 </div>
         </div>
     </div>
-
     <div class="form-group">
         <div class="col-sm-6 col-sm-offset-5">
             <button type="submit" id="cadastrarEntrada" class="btn btn-success">Salvar</button>
