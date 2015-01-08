@@ -16,10 +16,17 @@
             <input type="text" name="nomeProduto" class="form-control" id="nomeProduto" placeholder="Equipamento">
         </div>
     </div>
+    <div class="form-group">
+        <label for="nome" class="col-sm-2 control-label">S/N</label>
+        <div class="col-sm-4">
+            <input type="text" name="numeroSerie" class="form-control" id="numeroSerie" placeholder="Número de Série">
+        </div>
+    </div>
 
     <div class="form-group">
         <div class="checkbox">
             <label><input type="checkbox" name="carregador" value="x">Memória?</label>
+            <input type="text" class="form-control" name="memoria" id="memoria"/>
         </div>
         <div class="checkbox">
             <label><input type="checkbox" name="cabodados" value="x">HD / SSD ?</label>
@@ -61,12 +68,7 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label for="nome" class="col-sm-2 control-label">S/N</label>
-        <div class="col-sm-4">
-            <input type="text" name="numeroSerie" class="form-control" id="numeroSerie" placeholder="Número de Série">
-        </div>
-    </div>
+
     <div class="form-group">
         <textarea class="form-control" name="descDefeito"id="descDefeito" rows="3" placeholder="Descrição do Defeito"></textarea>
     </div>
