@@ -61,6 +61,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /** MENU PRINCIPAL EM TABS **/
+#pcDesc .checkbox input:nth-child(2){
+    display: none;
+}
+
 .centro{
     width: 660px;
     height: 45px;

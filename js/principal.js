@@ -108,7 +108,17 @@ $(document).ready(function(){
     });
 });
 
+// @ PC DESC @ //
+$("#pcDesc .checkbox input:nth-child(1)").click(function () {
+    var obj = this.parentNode.parentNode;
+    var data = $(obj);
+    
+});
+
+
+
 // @ CARTUCHO @ //
+
 var cartuchos = function () {
     if ($("#comcartucho").prop("checked")) {
         $("#cartucho").show();

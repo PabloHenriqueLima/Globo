@@ -23,48 +23,34 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div id="pcDesc" class="form-group">
         <div class="checkbox">
-            <label><input type="checkbox" name="carregador" value="x">Memória?</label>
-            <input type="text" class="form-control" name="memoria" id="memoria"/>
+            <label><input type="checkbox" name="memoria" value="x">Memória?</label>
+            <input type="text" class="form-control" name="memoriaData" id="memoriaData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="cabodados" value="x">HD / SSD ?</label>
+            <label><input type="checkbox" name="hdSsd" value="x">HD / SSD ?</label>
+            <input type="text" class="form-control" name="hdSSdData" id="hdSsdData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="comcartucho" id="comcartucho" value="x">Fonte?</label>
-            <div id="cartucho">
-                <input type="text" name="colorido" class="form-control" id="colorido" placeholder="Colorido">
-                <input type="text" name="pretobranco" class="form-control" id="pretobranco" placeholder="Preto">
-            </div>
+            <label><input type="checkbox" name="fonte" value="x">Fonte?</label>
+            <input type="text" class="form-control" name="fonteData" id="fonteData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="comcartucho" id="comcartucho" value="x">Placa Vídeo?</label>
-            <div id="cartucho">
-                <input type="text" name="colorido" class="form-control" id="colorido" placeholder="Colorido">
-                <input type="text" name="pretobranco" class="form-control" id="pretobranco" placeholder="Preto">
-            </div>
+            <label><input type="checkbox" name="placaVideo" value="x">Placa Vídeo?</label>
+            <input type="text" class="form-control" name="placaVideoData" id="placaVideoData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="comcartucho" id="comcartucho" value="x">Outras Placas?</label>
-            <div id="cartucho">
-                <input type="text" name="colorido" class="form-control" id="colorido" placeholder="Colorido">
-                <input type="text" name="pretobranco" class="form-control" id="pretobranco" placeholder="Preto">
-            </div>
+            <label><input type="checkbox" name="outrasPlacas" value="x">Outras Placas?</label>
+            <input type="text" class="form-control" name="outrasPlacasData" id="outrasPlacasData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="comcartucho" id="comcartucho" value="x">Leitor DVD?</label>
-            <div id="cartucho">
-                <input type="text" name="colorido" class="form-control" id="colorido" placeholder="Colorido">
-                <input type="text" name="pretobranco" class="form-control" id="pretobranco" placeholder="Preto">
-            </div>
+            <label><input type="checkbox" name="leitorDvd" value="x">Leitor DVD?</label>
+            <input type="text" class="form-control" name="leitorDvdData" id="leitorDvdData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="comcartucho" id="comcartucho" value="x">Leitor Card?</label>
-            <div id="cartucho">
-                <input type="text" name="colorido" class="form-control" id="colorido" placeholder="Colorido">
-                <input type="text" name="pretobranco" class="form-control" id="pretobranco" placeholder="Preto">
-            </div>
+            <label><input type="checkbox" name="leitorCard" value="x">Leitor Card?</label>
+            <input type="text" class="form-control" name="leitorCardData" id="leitorCardData"/>
         </div>
     </div>
 
@@ -79,14 +65,12 @@
         <div class="checkbox">
             <label><input type="checkbox" name="cabodados" value="x">Com cabo de dados</label>
         </div>
-    <div class="checkbox comcartucho">
-        <label><input type="checkbox" name="comcartucho" id="comcartucho" value="x"> Com Cartuchos</label>
-                <div id="cartucho">
-                        <input type="text" name="colorido" class="form-control" id="colorido" placeholder="Colorido">
-                        <input type="text" name="pretobranco" class="form-control" id="pretobranco" placeholder="Preto">
-                </div>
+    <div class="checkbox">
+        <label><input type="checkbox" name="cartucho" value="x">Com Cartuchos</label>
+        <input type="text" class="form-control" name="cartuchoData" id="cartuchoData"/>
         </div>
     </div>
+
     <div class="form-group">
         <div class="col-sm-6 col-sm-offset-5">
             <button type="submit" id="cadastrarEntrada" class="btn btn-success">Salvar</button>
