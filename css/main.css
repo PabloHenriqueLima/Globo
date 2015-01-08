@@ -61,7 +61,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /** MENU PRINCIPAL EM TABS **/
-#pcDesc .checkbox input:nth-child(2){
+#frm_entradaServico .checkbox input:nth-child(2){
     display: none;
 }
 

@@ -108,15 +108,20 @@ $(document).ready(function(){
     });
 });
 
-// @ PC DESC @ //
-$("#pcDesc .checkbox input:nth-child(1)").click(function () {
+// @ PC DESC ATIVADORES @ //
+$("#frm_entradaServico .checkbox input:nth-child(1)").click(function () {
     var obj = this.parentNode.parentNode;
-    var data = $(obj);
-    
+
+
+    if($(this).prop("checked")){
+
+        $(obj).find('input:nth-child(2)').show();
+    }else{
+        $(obj).find('input:nth-child(2)').hide();
+    }
+
+
 });
-
-
-
 // @ CARTUCHO @ //
 
 var cartuchos = function () {
@@ -131,19 +136,7 @@ $(".comcartucho").on("click",cartuchos);
 
 $(document).on("click","#btn_verUltimoServico", function () {
     alertify.alert('O código do ultimo serviço cadastrado é: ' + window.localStorage.getItem('ultimoCodigo'));
-})
-
-// @ Gerar garantia baixa serviço @ //    var garantia = function () {
-
-var garantia = function () {
-    if($("#gerargarantia")[0].checked){
-        $("#gerarGarantiaBox").show();
-    }else {
-        $("#gerarGarantiaBox").hide();
-    }
-
-}
-$("#gerargarantia").on("click",garantia);
+});
 
 // @ ativação de statuses @//
 
