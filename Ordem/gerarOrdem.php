@@ -24,7 +24,18 @@ $sql->bind_result($equipamento);
 $sql->fetch();
 
 //---------------------------------------------------------------------
-
+//add page
 $pdf->AddPage();
+//html content
+$pdf->Ln(10);
+
+//MultiCell($w, $h, $txt, $border=0, $align='J', $fill=0, $ln=1, $x='', $y='', $reseth=true, $stretch=0);
+
+
+$html = '
+<span style="font-size: xx-large;">xx-large</span>
+</p>';
+
+$pdf->writeHTML($html, true, false, true, false, '');
 
 $pdf->Output();
