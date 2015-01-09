@@ -29,13 +29,30 @@ $pdf->AddPage();
 //html content
 $pdf->Ln(10);
 
-//MultiCell($w, $h, $txt, $border=0, $align='J', $fill=0, $ln=1, $x='', $y='', $reseth=true, $stretch=0);
+//writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=false, $reseth=true, $align='', $autopadding=true)
 
-
-$html = '
-<span style="font-size: xx-large;">xx-large</span>
-</p>';
-
-$pdf->writeHTML($html, true, false, true, false, '');
+// Print some HTML Cells
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'R', true);
 
 $pdf->Output();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
