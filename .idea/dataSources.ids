@@ -25,12 +25,18 @@
       <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="equipamento" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
       <column name="serie" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="memoria" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="hdSsd" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fonte" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="placaVideo" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="leitorDvd" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="card" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
+      <column name="outros" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
       <column name="dataEntrada" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="descDefeito" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="carregador" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
       <column name="caboDados" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
-      <column name="cartuchoPreto" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="cartuchoColorido" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cartucho" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
       <column name="statusServico" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
       <column name="finalizado" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
       <primary-key name="PRIMARY" columns="codigoServico"/>

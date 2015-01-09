@@ -1,5 +1,5 @@
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
-<h4  class="text-center">Entrada de serviço</h4>
+<h4  class="text-center">Ordem de serviço</h4>
 
 <form class="form-horizontal" method="post" id="frm_entradaServico"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
@@ -41,16 +41,16 @@
             <input type="text" class="form-control" name="placaVideoData" id="placaVideoData"/>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="outrasPlacas" value="x">Outras Placas?</label>
-            <input type="text" class="form-control" name="outrasPlacasData" id="outrasPlacasData"/>
-        </div>
-        <div class="checkbox">
             <label><input type="checkbox" name="leitorDvd" value="x">Leitor DVD?</label>
             <input type="text" class="form-control" name="leitorDvdData" id="leitorDvdData"/>
         </div>
         <div class="checkbox">
             <label><input type="checkbox" name="leitorCard" value="x">Leitor Card?</label>
             <input type="text" class="form-control" name="leitorCardData" id="leitorCardData"/>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="outrasPlacas" value="x">Outros?</label>
+            <input type="text" class="form-control" name="outrosData" id="outrasPlacasData"/>
         </div>
     </div>
 
