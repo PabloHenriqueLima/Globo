@@ -244,7 +244,7 @@ $(document).ready(function() {
             e.preventDefault();
             var $form = $(e.target);
             setConfig();
-            alertify.confirm("Deseja dar baixa no serviço ?", function (ok) {
+            alertify.confirm("Deseja finalizar essa ordem de serviço ?", function (ok) {
                 if (ok) {
                     var formS = $form.serialize();
                     console.log(formS);

@@ -64,7 +64,9 @@ textarea {
 #frm_entradaServico .checkbox input:nth-child(2){
     display: none;
 }
-
+#formBaixa .checkbox{
+    display: none;
+}
 .centro{
     width: 660px;
     height: 45px;

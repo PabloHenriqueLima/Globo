@@ -122,16 +122,7 @@ $("#frm_entradaServico .checkbox input:nth-child(1)").click(function () {
 
 
 });
-// @ CARTUCHO @ //
 
-var cartuchos = function () {
-    if ($("#comcartucho").prop("checked")) {
-        $("#cartucho").show();
-    } else {
-        $("#cartucho").hide();
-    }
-}
-$(".comcartucho").on("click",cartuchos);
 // @ ULTIMO SERVIÇO @ //
 
 $(document).on("click","#btn_verUltimoServico", function () {
@@ -337,4 +328,33 @@ $("#excluirGarantiaG").click(function () {
         }) // confirm
     }
 });
+
+//@ Gerar Garantia @//
+$("#gerarGarantia").click(function () {
+    if($(this).prop('checked')){
+       $("#formBaixa .checkbox").show();
+    }else{
+        $("#formBaixa .checkbox").hide();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

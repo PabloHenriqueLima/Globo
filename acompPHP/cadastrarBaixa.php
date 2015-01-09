@@ -11,32 +11,40 @@ $sql->bind_param('s',$codigoservico);
 $sql-> execute();
 $sql->store_result();
 if($sql->num_rows >= 1) {
-    echo "Já foi dado baixa nesse Serviço.";
+    echo "Ordem de serviço já finalizada.";
     exit();
 }
-
-
-
-
-if(isset($gerargarantia) and $gerargarantia === "x"):
-    $query = "INSERT INTO garantia (codigoServico, inicio, periodo) VALUES (?,now(),?)";
-    if($sql = $mysqli->prepare($query)){}else{echo $mysqli->error;}
-    $sql->bind_param('si',$codigoservico,$garantia);
-    if($sql->execute()){}else{echo $mysqli->error;}
-else:
-endif;
-if(!isset($gerargarantia)){
-    $gerargarantia = " ";
+if(!empty($garantiaDias)){
+$x = 'x';
+}else{
+    $x = '';
 }
+
+
 $query = "INSERT INTO saida (codigoServico, preco, dataDaBaixa, descBaixa, garantia) VALUES (?,?,now(),?,?)";
 if($sql = $mysqli->prepare($query)){}else{echo $mysqli->error;}
-$sql->bind_param('ssss',$codigoservico,$valorServico,$descServico,$gerargarantia);
-if ($sql->execute()):
-    else: echo $mysqli->error; endif;
+$sql->bind_param('ssss',$codigoservico,$valorServico,$descServico,$x);
+if(!$sql->execute()) echo $mysqli->error;
 
 $query = "UPDATE entrada SET finalizado = ? WHERE codigoServico=?";
 $sql->prepare($query);
 $x = 'x';
 $sql->bind_param('si',$x,$codigoservico);
 $sql->execute();
-echo 'A baixa foi registrada com sucesso no sistema !';
+
+if(!empty($garantiaDias)){
+
+    $query = "INSERT INTO garantia (codigoServico, inicio, periodo) VALUES (?,now(),?)";
+    if($sql = $mysqli->prepare($query)){}else{echo $mysqli->error;}
+    $sql->bind_param('si',$codigoservico,$garantiaDias);
+    if(!$sql->execute()) echo $mysqli->error;
+}
+
+
+echo 'A ordem de serviço foi finalizada com sucesso.';
+
+
+
+
+
+
