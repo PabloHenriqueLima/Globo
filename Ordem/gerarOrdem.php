@@ -15,14 +15,14 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 if(!isset($_GET['ordem']) OR empty($_GET['ordem'])) die('Serviço não fornecido');
 $ordem = $_GET['ordem'];
 //------------------------------------------------
-$query = "select cli.id,cli.nomeCliente,cli.cpfCliente,cli.telefoneCliente,ent.equipamento,ent.serie,ent.memoria,ent.hdSsd,ent.fonte,ent.placaVideo,ent.leitorDvd,ent.card,ent.outros,ent.dataEntrada,ent.descDefeito,ent.carregador,ent.caboDados,ent.cartucho
+$query = "select cli.id,cli.nomeCliente,cli.cpfCliente,cli.endCliente,cli.bairroCliente,cli.cepCliente, cli.telefoneCliente,ent.equipamento,ent.serie,ent.memoria,ent.hdSsd,ent.fonte,ent.placaVideo,ent.leitorDvd,ent.card,ent.outros,ent.dataEntrada,ent.descDefeito,ent.carregador,ent.caboDados,ent.cartucho
 from entrada ent INNER JOIN clientes cli ON ent.idCliente = cli.id WHERE codigoServico = ?";
 
 if(!$sql = $mysqli->prepare($query)) die($mysqli->error);
 $sql->bind_param('s',$ordem);
 if(!$sql->execute()) die($mysqli->error);
 $sql->store_result();
-$sql->bind_result($id,$nomeCliente,$cpfCliente,$telefoneCliente,$equipamento,$serie,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$descDefeito,$carregador,$caboDados,$cartucho);
+$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$serie,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$descDefeito,$carregador,$caboDados,$cartucho);
 $sql->fetch();
 
 
@@ -40,13 +40,18 @@ $pdf->Ln(10);
 $html = '<span style="font-weight: bold">ORDEM DE SERVIÇO N°: </span>'. $ordem;
 
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
-$pdf->ln(2);
-$html = 'DADOS DO CLIENTE';
+$pdf->ln(4);
+$html = '<span style="font-weight: bold">DADOS DO CLIENTE</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
-$html = '<br/><span style="font-weight: bold">NOME DO CLIENTE: </span>'. $nomeCliente;
-$html .= '<br/><span style="font-weight: bold">CPF CLIEN: </span>'. $cpfCliente;
 
-$pdf->writeHTMLCell(0, 20, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+$html = '------------------------------------------------------------------------------------------------------------------------------';
+$html .= '<br/><span style="font-weight: bold">NOME: </span>'. $nomeCliente;
+$html .= '<br/><span style="font-weight: bold">CPF: </span>'. $cpfCliente;
+$html .= '<br/><span style="font-weight: bold">TELEFONE: </span>'. $telefoneCliente;
+$html .= '<br/><span style="font-weight: bold">ENDEREÇO: </span>'. $endereco;
+$html .= ' <span style="font-weight: bold">BAIRRO: </span>'. $bairro;
+
+$pdf->writeHTMLCell(0, 22, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
 
 $pdf->Output();
