@@ -53,6 +53,61 @@ $html .= ' <span style="font-weight: bold">BAIRRO: </span>'. $bairro;
 
 $pdf->writeHTMLCell(0, 22, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
+//------------------------------------------------------------------------------------------
+$pdf->ln(4);
+$html = '<span style="font-weight: bold">DADOS DO SERVIÇO</span>';
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+
+$html = '------------------------------------------------------------------------------------------------------------------------------';
+$html .= '<br/><span style="font-weight: bold">EQUIPAMENTO: </span>'. $equipamento;
+$html .= '<br/><span style="font-weight: bold">SERIE: </span>'. $serie;
+$html .= '<br/><span style="font-weight: bold">MEMORIA: </span>'. $memoria;
+$html .= '<br/><span style="font-weight: bold">HD / SDD: </span>'. $hdSSd;
+$html .= ' <br/><span style="font-weight: bold">FONTE: </span>'. $bairro;
+$html .= '<br/><span style="font-weight: bold">PLACA DE VÍDEO: </span>'. $placaVideo;
+$html .= ' <br/><span style="font-weight: bold">LEITOR DE DVD: </span>'. $leitorDvd;
+$html .= ' <br/><span style="font-weight: bold">LEITOR DE CARTÃO: </span>'. $card;
+$html .= ' <br/><span style="font-weight: bold">OUTROS: </span>'. $outros;
+$html .= ' <br/><span style="font-weight: bold">DESCRIÇÃO DO DEFEITO: </span>'. $descDefeito;
+$html .= ' <br/><span style="font-weight: bold">COM CARREGADOR?: </span>'. $carregador;
+$html .= ' <br/><span style="font-weight: bold">COM CARTUCHOS?: </span>'. $caboDados;
+
+
+$pdf->writeHTMLCell(0, 70, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+//-----------------------------------------------------------------------
+
+$quebrarInicio = explode(" ",$dataEntrada);
+list($data,$horario) = $quebrarInicio;
+$quebrarData = explode("-",$data);
+list($ano,$mes,$dia) = $quebrarData;
+$dataI = date('d-m-Y',mktime(0,0,0,$mes,$dia,$ano));
+$dataF = date('d-m-Y',mktime(0,0,0,$mes,$dia + 2,$ano));
+
+$dataEntrada = $dataI.' '.$horario;
+$dataSaida = $dataF.' '.$horario;
+
+
+$html = ' <br/><span style="font-weight: bold">DATA DE ENTRADA: </span>'. $dataEntrada;
+$html .= ' - <span style="font-weight: bold">PREVISÃO DE SAÍDA: </span>'. $dataSaida;
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+//-------------------------------------------------------------------------------------
+$html = '------------------------------------------------------------------------------------------------------------------------------';
+$html .= ' <br/><span style="font-weight: bold">OBS*: </span>'. 'Cabe ao cliente acima cumprir um prazo de 60(sessenta) dias para retiradado seu
+equipamento do estabelecimento, após esse prazo será cobrado taxa diária.';
+
+
+$pdf->writeHTMLCell(0,20, '', '', $html, 0, 1, 0, true, 'L', true);
+
+//---------------------------------------------------------
+$html = '__________________________________________ <br /> Assinatura do Cliente';
+
+$pdf->writeHTMLCell(0, 20, '', '', $html, 0, 1, 0, true, 'C', true);
+
+$html = '__________________________________________ <br /> Assinatura do Técnico Responsável';
+
+$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, 'C', true);
+
+
 
 $pdf->Output();
 

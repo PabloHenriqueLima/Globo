@@ -19,5 +19,8 @@ public function Header() {
     $this->Cell(0,9,'globoinformaticadirceu@gmail.com',0,2, 'C', 0, '', 0, false, 'M', 'M');
 
     }
+    public function Footer(){
+
+    }
 
 }
