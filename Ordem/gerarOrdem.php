@@ -37,10 +37,10 @@ $pdf->Ln(10);
 // Print some HTML Cells
 
 
-$html = '<span style="font-weight: bold">ORDEM DE SERVIÇO N°: </span>'. $ordem;
+$html = '<span style="font-weight: bold; font-size: x-large">ORDEM DE SERVIÇO N°: </span>'.'<span style="font-size: x-large">'. $ordem . '</span>';
 
-$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
-$pdf->ln(4);
+$pdf->writeHTMLCell(0, 0, '55', '', $html, '', 1, 0, true, 'L', true);
+$pdf->ln(8);
 $html = '<span style="font-weight: bold">DADOS DO CLIENTE</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
