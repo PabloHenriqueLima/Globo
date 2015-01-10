@@ -24,7 +24,9 @@
       <column name="codigoServico" sqlType="CHAR" precision="13" scale="0" nullable="false" jdbcType="1"/>
       <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="equipamento" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="marcaModelo" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
       <column name="serie" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="placamae" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
       <column name="memoria" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
       <column name="hdSsd" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>
       <column name="fonte" sqlType="VARCHAR" precision="70" scale="0" nullable="false" jdbcType="12"/>

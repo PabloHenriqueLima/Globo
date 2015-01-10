@@ -17,6 +17,12 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="nome" class="col-sm-4 control-label">Modelo / Modelo</label>
+        <div class="col-sm-4">
+            <input type="text" name="marcaModelo" class="form-control" id="marcaModelo" placeholder="Marca / Modelo">
+        </div>
+    </div>
+    <div class="form-group">
         <label for="nome" class="col-sm-2 control-label">S/N</label>
         <div class="col-sm-4">
             <input type="text" name="numeroSerie" class="form-control" id="numeroSerie" placeholder="Número de Série">
@@ -24,6 +30,10 @@
     </div>
 
     <div id="pcDesc" class="form-group">
+        <div class="checkbox">
+            <label><input type="checkbox" name="memoria" value="x">Placa Mãe?</label>
+            <input type="text" class="form-control" name="placaMaeData" id="placaMaeData"/>
+        </div>
         <div class="checkbox">
             <label><input type="checkbox" name="memoria" value="x">Memória?</label>
             <input type="text" class="form-control" name="memoriaData" id="memoriaData"/>

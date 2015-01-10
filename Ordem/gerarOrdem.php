@@ -44,22 +44,23 @@ $pdf->ln(4);
 $html = '<span style="font-weight: bold">DADOS DO CLIENTE</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
-$html = '------------------------------------------------------------------------------------------------------------------------------';
-$html .= '<br/><span style="font-weight: bold">NOME: </span>'. $nomeCliente;
+//$html = '------------------------------------------------------------------------------------------------------------------------------';
+$html = '<br/><span style="font-weight: bold">NOME: </span>'. $nomeCliente;
 $html .= '<br/><span style="font-weight: bold">CPF: </span>'. $cpfCliente;
-$html .= '<br/><span style="font-weight: bold">TELEFONE: </span>'. $telefoneCliente;
 $html .= '<br/><span style="font-weight: bold">ENDEREÇO: </span>'. $endereco;
 $html .= ' <span style="font-weight: bold">BAIRRO: </span>'. $bairro;
+$html .= '<br/><span style="font-weight: bold">TELEFONE: </span>'. $telefoneCliente;
+$html .= '<br/><span style="font-weight: bold">CEP: </span>'. $cep;
 
 $pdf->writeHTMLCell(0, 22, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
 //------------------------------------------------------------------------------------------
 $pdf->ln(4);
-$html = '<span style="font-weight: bold">DADOS DO SERVIÇO</span>';
+$html = '<span style="font-weight: bold">DESCRIÇÃO DO EQUIPAMENTO</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
-$html = '------------------------------------------------------------------------------------------------------------------------------';
-$html .= '<br/><span style="font-weight: bold">EQUIPAMENTO: </span>'. $equipamento;
+//$html = '------------------------------------------------------------------------------------------------------------------------------';
+$html = '<br/><span style="font-weight: bold"></span>'. $equipamento;
 if(!empty($serie)) $html .= '<br/><span style="font-weight: bold">SERIE: </span>'. $serie;
 if(!empty($memoria)) $html .= '<br/><span style="font-weight: bold">MEMORIA: </span>'. $memoria;
 if(!empty($hdSSd)) $html .= '<br/><span style="font-weight: bold">HD / SDD: </span>'. $hdSSd;
@@ -87,25 +88,25 @@ $dataEntrada = $dataI.' '.$horario;
 $dataSaida = $dataF.' '.$horario;
 
 
-$html = ' <br/><span style="font-weight: bold">DATA DE ENTRADA: </span>'. $dataEntrada;
-$html .= ' - <span style="font-weight: bold">PREVISÃO DE SAÍDA: </span>'. $dataSaida;
+$html = ' <br/><span style="font-weight: bold">ENTRADA: </span>'. $dataEntrada;
+$html .= ' - <span style="font-weight: bold">ORÇAMENTO EM ATÉ 72 Hhs </span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 //-------------------------------------------------------------------------------------
 $html = '------------------------------------------------------------------------------------------------------------------------------';
-$html .= ' <br/><span style="font-weight: bold">OBS*: </span>'. 'Cabe ao cliente acima cumprir um prazo de 60(sessenta) dias para retiradado seu
-equipamento do estabelecimento, após esse prazo será cobrado taxa diária.';
+$html .= ' <br/><span style="font-weight: bold">OBS*: </span>'. 'Cabe ao cliente acima citado, retirar o seu equipamento em um prazo
+de até 60(sessenta) dias, após esse prazo será cobrado taxa de depósito.';
 
 
-$pdf->writeHTMLCell(0,20, '', '', $html, 0, 1, 0, true, 'L', true);
+$pdf->writeHTMLCell(0,25, '', '', $html, 0, 1, 0, true, 'L', true);
 
 //---------------------------------------------------------
-$html = '__________________________________________ <br /> Assinatura do Cliente';
+$html = '_____________________________________ <br />Assinatura do Cliente';
 
-$pdf->writeHTMLCell(0, 20, '', '', $html, 0, 1, 0, true, 'C', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, 'L', true);
 
-$html = '__________________________________________ <br /> Assinatura do Técnico Responsável';
+$html = '______________________________________<br /> Assinatura do Técnico Responsável';
 
-$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, 'C', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, 'R', true);
 
 
 
