@@ -12,11 +12,12 @@ public function Header() {
     // Title
     $this->Cell(0,13,'GLOBO INFORMÁTICA',0, 2, 'C', 0, '', 0, false, 'M', 'M');
     $this->SetFont('courier', 'B', 13);
-    $this->Cell(0,9,'Quadra 163, Casa 18, Dirceu II, CEP: 64078-040',0, 2, 'C', 0, '', 0, false, 'M', 'M');
     $this->Cell(0,9,'CNPJ: 07.150.424/0001-81',0,2, 'C', 0, '', 0, false, 'M', 'M');
-    $this->Cell(0,9,'Contatos: (86) 3231-8186 / (86) 8859-7086',0,2, 'C', 0, '', 0, false, 'M', 'M');
     $this->Cell(0,9,'www.globo-informatica.com',0,2, 'C', 0, '', 0, false, 'M', 'M');
     $this->Cell(0,9,'globoinformaticadirceu@gmail.com',0,2, 'C', 0, '', 0, false, 'M', 'M');
+    $this->Cell(0,9,'Quadra 163, Casa 18, Dirceu II, CEP: 64078-040',0, 2, 'C', 0, '', 0, false, 'M', 'M');
+    $this->Cell(0,9,'Contatos: (86) 3231-8186 / (86) 8859-7086',0,2, 'C', 0, '', 0, false, 'M', 'M');
+
 
     }
     public function Footer(){
