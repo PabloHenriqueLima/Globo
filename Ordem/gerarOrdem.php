@@ -60,20 +60,20 @@ $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
 $html = '------------------------------------------------------------------------------------------------------------------------------';
 $html .= '<br/><span style="font-weight: bold">EQUIPAMENTO: </span>'. $equipamento;
-$html .= '<br/><span style="font-weight: bold">SERIE: </span>'. $serie;
-$html .= '<br/><span style="font-weight: bold">MEMORIA: </span>'. $memoria;
-$html .= '<br/><span style="font-weight: bold">HD / SDD: </span>'. $hdSSd;
-$html .= ' <br/><span style="font-weight: bold">FONTE: </span>'. $bairro;
-$html .= '<br/><span style="font-weight: bold">PLACA DE VÍDEO: </span>'. $placaVideo;
-$html .= ' <br/><span style="font-weight: bold">LEITOR DE DVD: </span>'. $leitorDvd;
-$html .= ' <br/><span style="font-weight: bold">LEITOR DE CARTÃO: </span>'. $card;
-$html .= ' <br/><span style="font-weight: bold">OUTROS: </span>'. $outros;
-$html .= ' <br/><span style="font-weight: bold">DESCRIÇÃO DO DEFEITO: </span>'. $descDefeito;
-$html .= ' <br/><span style="font-weight: bold">COM CARREGADOR?: </span>'. $carregador;
-$html .= ' <br/><span style="font-weight: bold">COM CARTUCHOS?: </span>'. $caboDados;
+if(!empty($serie)) $html .= '<br/><span style="font-weight: bold">SERIE: </span>'. $serie;
+if(!empty($memoria)) $html .= '<br/><span style="font-weight: bold">MEMORIA: </span>'. $memoria;
+if(!empty($hdSSd)) $html .= '<br/><span style="font-weight: bold">HD / SDD: </span>'. $hdSSd;
+if(!empty($fonte)) $html .= ' <br/><span style="font-weight: bold">FONTE: </span>'. $fonte;
+if(!empty($placaVideo)) $html .= '<br/><span style="font-weight: bold">PLACA DE VÍDEO: </span>'. $placaVideo;
+if(!empty($leitorDvd)) $html .= ' <br/><span style="font-weight: bold">LEITOR DE DVD: </span>'. $leitorDvd;
+if(!empty($card)) $html .= ' <br/><span style="font-weight: bold">LEITOR DE CARTÃO: </span>'. $card;
+if(!empty($outros)) $html .= ' <br/><span style="font-weight: bold">OUTROS: </span>'. $outros;
+if(!empty($descDefeito)) $html .= ' <br/><span style="font-weight: bold">DESCRIÇÃO DO DEFEITO: </span>'. $descDefeito;
+if(!empty($carregador)) $html .= ' <br/><span style="font-weight: bold">COM CARREGADOR?: </span>'. $carregador;
+if(!empty($caboDados)) $html .= ' <br/><span style="font-weight: bold">COM CARTUCHOS?: </span>'. $caboDados;
 
 
-$pdf->writeHTMLCell(0, 70, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 //-----------------------------------------------------------------------
 
 $quebrarInicio = explode(" ",$dataEntrada);
