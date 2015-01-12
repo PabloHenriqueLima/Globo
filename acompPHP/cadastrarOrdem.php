@@ -6,9 +6,6 @@ $con = new MysqlChange();
 $mysqli = $con->connect();
 
 extract($_POST);
-foreach($_POST as $each){
-    if( empty($each) ) $each = 'z';
-}
 
 $idCliente = preg_replace("/[^0-9]/","",$search);
 $idCliente = (int) $idCliente;
@@ -30,10 +27,6 @@ $leitorCartão = $leitorCartaoMarca . '-' .$leitorCartaoSn;
 $cartuchoA = $cartuchoMarcaA. '-' .$cartuchoCorA. '-' .$cartuchoSnA;
 $cartuchoB = $cartuchoMarcaB. '-' .$cartuchoCorB. '-' .$cartuchoSnB;
 $cartucho = $cartuchoA.'/'.$cartuchoB;
-
-
-
-
 
 $sql->bind_param('sissssssssssssssss',$codServico,$idCliente,$equipamento,$marcaModelo,$serie,$placaMae,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$leitorCartão,$outros,$infoPreliminar,$carregador,$caboDados,$cartucho,$statusInicial);
 

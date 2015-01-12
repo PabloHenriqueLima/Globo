@@ -15,14 +15,14 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 if(!isset($_GET['ordem']) OR empty($_GET['ordem'])) die('Serviço não fornecido');
 $ordem = $_GET['ordem'];
 //------------------------------------------------
-$query = "select cli.id,cli.nomeCliente,cli.cpfCliente,cli.endCliente,cli.bairroCliente,cli.cepCliente, cli.telefoneCliente,ent.equipamento,ent.serie,ent.memoria,ent.hdSsd,ent.fonte,ent.placaVideo,ent.leitorDvd,ent.card,ent.outros,ent.dataEntrada,ent.descDefeito,ent.carregador,ent.caboDados,ent.cartucho
+$query = "select cli.id,cli.nomeCliente,cli.cpfCliente,cli.endCliente,cli.bairroCliente,cli.cepCliente, cli.telefoneCliente,ent.equipamento,ent.marcaModelo,ent.serie,ent.placaMae,ent.memoria,ent.hdSsd,ent.fonte,ent.placaVideo,ent.leitorDvd,ent.card,ent.outros,ent.dataEntrada,ent.descDefeito,ent.carregador,ent.caboDados,ent.cartucho
 from entrada ent INNER JOIN clientes cli ON ent.idCliente = cli.id WHERE codigoServico = ?";
 
 if(!$sql = $mysqli->prepare($query)) die($mysqli->error);
 $sql->bind_param('s',$ordem);
 if(!$sql->execute()) die($mysqli->error);
 $sql->store_result();
-$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$serie,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$descDefeito,$carregador,$caboDados,$cartucho);
+$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$marcaModelo,$serie,$placaMae,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$descDefeito,$carregador,$caboDados,$cartucho);
 $sql->fetch();
 
 
@@ -45,12 +45,12 @@ $html = '<span style="font-weight: bold">DADOS DO CLIENTE</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 
 //$html = '------------------------------------------------------------------------------------------------------------------------------';
-$html = '<br/><span style="font-weight: bold">NOME: </span>'. $nomeCliente;
-$html .= '<br/><span style="font-weight: bold">CPF: </span>'. $cpfCliente;
-$html .= '<br/><span style="font-weight: bold">ENDEREÇO: </span>'. $endereco;
-$html .= ' <span style="font-weight: bold">BAIRRO: </span>'. $bairro;
-$html .= '<br/><span style="font-weight: bold">TELEFONE: </span>'. $telefoneCliente;
-$html .= '<br/><span style="font-weight: bold">CEP: </span>'. $cep;
+$html = '<br/><span style="font-weight: bold">Nome: </span>'. $nomeCliente;
+$html .= '<br/><span style="font-weight: bold">Cpf: </span>'. $cpfCliente;
+$html .= '<br/><span style="font-weight: bold">Endereço: </span>'. $endereco;
+$html .= ' <span style="font-weight: bold">Bairro: </span>'. $bairro;
+$html .= '<br/><span style="font-weight: bold">Telefone: </span>'. $telefoneCliente;
+$html .= '<br/><span style="font-weight: bold">Cep: </span>'. $cep;
 
 $pdf->writeHTMLCell(0, 22, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 
@@ -58,20 +58,53 @@ $pdf->writeHTMLCell(0, 22, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 $pdf->ln(4);
 $html = '<span style="font-weight: bold">DESCRIÇÃO DO EQUIPAMENTO</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
+//----- Explodindo as variaveis ------- //
+$var = explode('-',$memoria);
+list($memoriaMarca,$memoriaGb,$memoriaSn) = $var;
+
+$var = explode('-',$hdSSd);
+list($hdMarca,$hdGb,$hdSn) = $var;
+
+$var = explode('-',$fonte);
+list($fonteMarca,$fonteGb,$fonteSn) = $var;
+
+$var = explode('-',$placaVideo);
+list($placaVideoMarca,$placaVideoGb,$placaVideoSn) = $var;
+
+$var = explode('-',$leitorDvd);
+list($leitorMarca,$leitorDvdSn) = $var;
+
+$var = explode('-',$card);
+list($cardMarca,$cardSn) = $var;
+
+$var = explode('/',$cartucho);
+list($cartuchoA,$cartuchoB) = $var;
+$var = explode('-',$cartuchoA);
+list($cartuchoMarcaA,$cartuchoCorA,$cartuchoSnA) = $var;
+$var = explode('-',$cartuchoB);
+list($cartuchoMarcaB,$cartuchoCorB,$cartuchoSnB) = $var;
+
+
+
+
 
 //$html = '------------------------------------------------------------------------------------------------------------------------------';
-$html = '<br/><span style="font-weight: bold"></span>'. $equipamento;
-if(!empty($serie)) $html .= '<br/><span style="font-weight: bold">SERIE: </span>'. $serie;
-if(!empty($memoria)) $html .= '<br/><span style="font-weight: bold">MEMORIA: </span>'. $memoria;
-if(!empty($hdSSd)) $html .= '<br/><span style="font-weight: bold">HD / SDD: </span>'. $hdSSd;
-if(!empty($fonte)) $html .= ' <br/><span style="font-weight: bold">FONTE: </span>'. $fonte;
-if(!empty($placaVideo)) $html .= '<br/><span style="font-weight: bold">PLACA DE VÍDEO: </span>'. $placaVideo;
-if(!empty($leitorDvd)) $html .= ' <br/><span style="font-weight: bold">LEITOR DE DVD: </span>'. $leitorDvd;
-if(!empty($card)) $html .= ' <br/><span style="font-weight: bold">LEITOR DE CARTÃO: </span>'. $card;
-if(!empty($outros)) $html .= ' <br/><span style="font-weight: bold">OUTROS: </span>'. $outros;
-if(!empty($descDefeito)) $html .= ' <br/><span style="font-weight: bold">DESCRIÇÃO DO DEFEITO: </span>'. $descDefeito;
-if(!empty($carregador)) $html .= ' <br/><span style="font-weight: bold">COM CARREGADOR?: </span>'. $carregador;
-if(!empty($caboDados)) $html .= ' <br/><span style="font-weight: bold">COM CARTUCHOS?: </span>'. $caboDados;
+$html = '<br/><span style="font-weight: bold">Nome: </span>'. $equipamento;
+if(!empty($marcaModelo)) $html .= ' '.$marcaModelo.' ';
+if(!empty($serie)) $html .= '<span style="font-weight: bold">Série: </span>'. $serie;
+//----------------------------------------------
+if(!empty($memoriaMarca)) $html .= '<br/><span style="font-weight: bold">Memória: </span>'. $hdMarca ;
+
+
+if(!empty($hdSSd)) $html .= '<br/><span style="font-weight: bold">Hd / Ssd: </span>'. $hdSSd;
+if(!empty($fonte)) $html .= ' <br/><span style="font-weight: bold">Fonte: </span>'. $fonte;
+if(!empty($placaVideo)) $html .= '<br/><span style="font-weight: bold">Placa de Vídeo: </span>'. $placaVideo;
+if(!empty($leitorDvd)) $html .= ' <br/><span style="font-weight: bold">Leitor de DVD: </span>'. $leitorDvd;
+if(!empty($card)) $html .= ' <br/><span style="font-weight: bold">Leitor de Cartão: </span>'. $card;
+if(!empty($outros)) $html .= ' <br/><span style="font-weight: bold">Outros: </span>'. $outros;
+if(!empty($descDefeito)) $html .= ' <br/><span style="font-weight: bold">Informações Preliminares: </span>'. $descDefeito;
+if(!empty($carregador)) $html .= ' <br/><span style="font-weight: bold">C/ Carregador : </span>'. $carregador;
+if(!empty($caboDados)) $html .= ' <br/><span style="font-weight: bold">Cartucho(s) : </span>'. $caboDados;
 
 
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
