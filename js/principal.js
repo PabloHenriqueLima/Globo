@@ -110,18 +110,19 @@ $(document).ready(function(){
 
 // @ PC DESC ATIVADORES @ //
 $(".cadastroOrdem .checkbox input").click(function () {
-    var $this = this;
+    var $thisName = this.getAttribute("name");
     var obj = this.parentNode.parentNode;
+   // console.debug();
     var obj = $(obj).next();
 
     if($(this).prop("checked")){
-
+        if($thisName == 'cartucho') $(obj).next().show();
         $(obj).show();
     }else{
+        if($thisName == 'caboDados' || $thisName == 'carregador') return;
         $(obj).hide();
+        if($thisName == 'cartucho') $(obj).next().hide();
     }
-
-
 });
 
 // @ ULTIMO SERVIÇO @ //
