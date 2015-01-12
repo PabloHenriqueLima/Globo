@@ -109,15 +109,15 @@ $(document).ready(function(){
 });
 
 // @ PC DESC ATIVADORES @ //
-$("#frm_entradaServico .checkbox input:nth-child(1)").click(function () {
+$(".cadastroOrdem .checkbox input").click(function () {
     var obj = this.parentNode.parentNode;
-
+    var obj = $(obj).next();
 
     if($(this).prop("checked")){
 
-        $(obj).find('input:nth-child(2)').show();
+        $(obj).show();
     }else{
-        $(obj).find('input:nth-child(2)').hide();
+        $(obj).hide();
     }
 
 

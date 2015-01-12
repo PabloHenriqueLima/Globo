@@ -1,7 +1,7 @@
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
 <h4  class="text-center">Ordem de serviço</h4>
-
-<form class="form-horizontal" method="post" id="frm_entradaServico"><!-- FORMULÁRIO CADASTRO -->
+<!-- CADASTRAR ORDEM -->
+<form class="form-horizontal cadastroOrdem" method="post" id="frm_entradaServico">
     <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">
             <div class="input-group">
@@ -28,7 +28,6 @@
             <input type="text" name="numeroSerie" class="form-control" id="numeroSerie" placeholder="Número de Série">
         </div>
     </div>
-
     <div class="form-group">
 
         <div class="checkbox">
