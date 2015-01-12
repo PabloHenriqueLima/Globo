@@ -65,10 +65,9 @@ textarea {
     margin-top: 15px;
     border: solid 1px #cccccc;
     padding: 7px;
-}
-#frm_entradaServico .checkbox input:nth-child(2){
     display: none;
 }
+
 #formBaixa .checkbox{
     display: none;
 }

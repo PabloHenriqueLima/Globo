@@ -103,7 +103,7 @@ $(document).ready(function(){
     $("#search").typeahead({
         name : 'sear',
         remote: {
-            url : dirAcompPHP+'buscarClienteEntrada.php?nomeCliente=%QUERY'
+            url : dirAcompPHP+'buscarClienteOrdem.php?nomeCliente=%QUERY'
         }
     });
 });

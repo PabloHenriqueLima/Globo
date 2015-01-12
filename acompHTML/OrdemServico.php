@@ -151,7 +151,7 @@
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Outro</label>
+            <label><input type="checkbox" name="memoria" value="x">Outro(a)</label>
         </div>
         <div class="form-group mt">
             <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
@@ -168,15 +168,11 @@
             </div>
         </div>
 
-        <div class="checkbox">
-            <label><input type="checkbox" name="outrasPlacas" value="x">Outros?</label>
-            <input type="text" class="form-control" name="outrosData" id="outrasPlacasData"/>
-        </div>
     </div>
 
 
     <div class="form-group">
-        <textarea class="form-control" name="descDefeito"id="descDefeito" rows="3" placeholder="Descrição do Defeito"></textarea>
+        <textarea class="form-control" name="descDefeito"id="descDefeito" rows="3" placeholder="Informações Preliminares"></textarea>
     </div>
     <div class="form-group">
         <div class="checkbox">
@@ -185,10 +181,40 @@
         <div class="checkbox">
             <label><input type="checkbox" name="cabodados" value="x">Com cabo de dados</label>
         </div>
-    <div class="checkbox">
-        <label><input type="checkbox" name="cartucho" value="x">Com Cartuchos</label>
-        <input type="text" class="form-control" name="cartuchoData" id="cartuchoData"/>
+
+        <div class="checkbox">
+            <label><input type="checkbox" name="memoria" value="x">Com Cartucho</label>
         </div>
+        <div class="form-group mt">
+            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <div class="col-sm-3 inline">
+                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+            </div>
+            <label for="placaMaeMarca" class="col-sm-1 control-label">Cor</label>
+            <div class="col-sm-2 inline">
+                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+            </div>
+            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <div class="col-sm-4 inline">
+                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+            </div>
+        </div>
+        <div class="form-group mt">
+            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <div class="col-sm-3 inline">
+                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+            </div>
+            <label for="placaMaeMarca" class="col-sm-1 control-label">Cor</label>
+            <div class="col-sm-2 inline">
+                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+            </div>
+            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <div class="col-sm-4 inline">
+                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+            </div>
+        </div>
+
+
     </div>
 
     <div class="form-group">

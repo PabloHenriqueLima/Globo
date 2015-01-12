@@ -14,7 +14,7 @@ $sql->store_result();
 $sql->bind_result($id,$nome);
 
 while($sql->fetch()){
-    $dados[] =  $nome.' '.' ID:('.$id.')';
+    $dados[] =  $nome.' '.'('.$id.')';
 }
 echo json_encode($dados,JSON_UNESCAPED_UNICODE);
 
