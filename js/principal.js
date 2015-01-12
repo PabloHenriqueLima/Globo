@@ -110,6 +110,7 @@ $(document).ready(function(){
 
 // @ PC DESC ATIVADORES @ //
 $(".cadastroOrdem .checkbox input").click(function () {
+    var $this = this;
     var obj = this.parentNode.parentNode;
     var obj = $(obj).next();
 
