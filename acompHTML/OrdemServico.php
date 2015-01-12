@@ -13,19 +13,17 @@
     <div class="form-group">
         <label for="nome" class="col-sm-2 control-label">Equipamento</label>
         <div class="col-sm-8">
-            <input type="text" name="nomeProduto" class="form-control" id="nomeProduto" placeholder="Equipamento">
+            <input type="text" name="equipamento" class="form-control" id="equipamento" placeholder="Equipamento">
         </div>
     </div>
     <div class="form-group">
         <label for="marcaModelo" class="col-sm-2 control-label">Marca/Modelo</label>
-        <div class="col-sm-4">
+        <div class="col-sm-4 inline">
             <input type="text" name="marcaModelo" class="form-control" id="marcaModelo" placeholder="Marca / Modelo">
         </div>
-    </div>
-    <div class="form-group">
         <label for="numeroSerie" class="col-sm-2 control-label">S/N</label>
-        <div class="col-sm-4">
-            <input type="text" name="numeroSerie" class="form-control" id="numeroSerie" placeholder="Número de Série">
+        <div class="col-sm-4 inline">
+            <input type="text" name="serie" class="form-control" id="numeroSerie" placeholder="Número de Série">
         </div>
     </div>
 
@@ -148,20 +146,12 @@
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="outro" value="x">Outro(a)</label>
+            <label><input type="checkbox" name="outro" value="x">Outros</label>
         </div>
         <div class="form-group mt">
-            <label for="outroMarca" class="col-sm-1 control-label">Marca</label>
-            <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="outroMarca" id="outroMarca"/>
-            </div>
-            <label for="outroGb" class="col-sm-1 control-label">GB</label>
-            <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="outroGb" id="outroGb"/>
-            </div>
-            <label for="outroSn" class="col-sm-1 control-label">S/N</label>
-            <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="outroSn" id="outroSn"/>
+            <label for="outros" class="col-sm-1 control-label"></label>
+            <div class="col-sm-12 inline">
+                <input type="text" class="form-control" name="outros" id="outros"/>
             </div>
         </div>
 
@@ -169,7 +159,7 @@
 
 
     <div class="form-group">
-        <textarea class="form-control" name="descDefeito"id="descDefeito" rows="3" placeholder="Informações Preliminares"></textarea>
+        <textarea class="form-control" name="infoPreliminar"id="infoPreliminar" rows="3" placeholder="Informações Preliminares"></textarea>
     </div>
     <div class="form-group">
         <div class="checkbox">

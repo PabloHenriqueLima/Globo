@@ -128,7 +128,7 @@ $(".cadastroOrdem .checkbox input").click(function () {
 // @ ULTIMO SERVIÇO @ //
 
 $(document).on("click","#btn_verUltimoServico", function () {
-    alertify.alert('O código do ultimo serviço cadastrado é: ' + window.localStorage.getItem('ultimoCodigo'));
+    alertify.alert('O código da ultimo Ordem cadastrada é: ' + window.localStorage.getItem('ultimoCodigo'));
 });
 
 // @ ativação de statuses @//

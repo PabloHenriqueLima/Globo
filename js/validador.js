@@ -139,7 +139,7 @@ $(document).ready(function() {
                         }
                     }
                 },
-                descDefeito:{
+                infoPreliminar:{
                     validators:{
                         notEmpty:{
                             message:'Descrição do problema obrigatória.'
@@ -161,11 +161,11 @@ $(document).ready(function() {
             e.preventDefault();
             var $form = $(e.target);
             setConfig();
-            alertify.confirm("Cadastrar entrada do serviço ?", function (ok) {
+            alertify.confirm("Gerar Ordem de Serviço ?", function (ok) {
                 if (ok) {
                     var formS = $form.serialize();
                     console.log(formS);
-                    $.post(dirAcompPHP+"cadastrarEntradaProduto.php", $form.serialize(), function (result) {
+                    $.post(dirAcompPHP+"cadastrarOrdem.php", $form.serialize(), function (result) {
                         window.localStorage.setItem('ultimoCodigo',result);
                         alertify.alert('Serviço cadastrado com sucesso, anote o código do serviço: ' + result);
                         $($form).data('bootstrapValidator').resetForm();
