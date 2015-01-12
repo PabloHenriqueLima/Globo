@@ -89,6 +89,10 @@
             <div class="col-sm-3 inline">
                 <input type="text" class="form-control" name="fonteMarca" id="fonteMarca"/>
             </div>
+            <label for="fonteWatts" class="col-sm-1 control-label">Watts</label>
+            <div class="col-sm-2 inline">
+                <input type="text" class="form-control" name="fonteWatts" id="fonteWatts"/>
+            </div>
             <label for="fonteSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
                 <input type="text" class="form-control" name="fonteSn" id="fonteSn"/>
