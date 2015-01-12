@@ -42,7 +42,7 @@ $html = '<span style="font-weight: bold; font-size: x-large">ORDEM DE SERVIÇO N
 $pdf->writeHTMLCell(0, 0, '55', '', $html, '', 1, 0, true, 'L', true);
 $pdf->ln(8);
 $html = '<span style="font-weight: bold">DADOS DO CLIENTE</span>';
-$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 
 //$html = '------------------------------------------------------------------------------------------------------------------------------';
 $html = '<br/><span style="font-weight: bold">NOME: </span>'. $nomeCliente;
@@ -57,7 +57,7 @@ $pdf->writeHTMLCell(0, 22, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 //------------------------------------------------------------------------------------------
 $pdf->ln(4);
 $html = '<span style="font-weight: bold">DESCRIÇÃO DO EQUIPAMENTO</span>';
-$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 
 //$html = '------------------------------------------------------------------------------------------------------------------------------';
 $html = '<br/><span style="font-weight: bold"></span>'. $equipamento;
@@ -90,7 +90,7 @@ $dataSaida = $dataF.' '.$horario;
 
 $html = ' <br/><span style="font-weight: bold">ENTRADA: </span>'. $dataEntrada;
 $html .= ' - <span style="font-weight: bold">ORÇAMENTO EM ATÉ 72 Hhs </span>';
-$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 //-------------------------------------------------------------------------------------
 $html = '------------------------------------------------------------------------------------------------------------------------------';
 $html .= ' <br/><span style="font-weight: bold">OBS*: </span>'. 'Cabe ao cliente acima citado, retirar o seu equipamento em um prazo

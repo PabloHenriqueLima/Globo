@@ -61,6 +61,11 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /** MENU PRINCIPAL EM TABS **/
+.mt{
+    margin-top: 15px;
+    border: solid 1px #cccccc;
+    padding: 7px;
+}
 #frm_entradaServico .checkbox input:nth-child(2){
     display: none;
 }
@@ -86,7 +91,7 @@ textarea {
 }
 #div_editarCliente{
     padding: 15px;
-   // display: none;
+// display: none;
 }
 #frm_editarCliente{
     display: none;
@@ -117,7 +122,7 @@ td{
     background: #000;
 }
 #verUltimoServico{
-  //  display: none;
+//  display: none;
     position: fixed;
     right:5px;
     bottom:5px;
@@ -136,6 +141,8 @@ td{
     display: none;
     margin-top: 15px;
 }
+
+
 /* CUSTOM CSS FOR TYPEHEAD */
 .tt-query,
 .tt-hint {
