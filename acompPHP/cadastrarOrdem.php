@@ -6,20 +6,41 @@ $con = new MysqlChange();
 $mysqli = $con->connect();
 
 extract($_POST);
-$search = preg_replace("/[^0-9]/","",$search);
-$search = (int) $search;
+$idCliente = preg_replace("/[^0-9]/","",$idCliente);
+$idCliente = (int) $idCliente;
 $carregador = (isset($carregador) ? $carregador : '');
-$cabodados = (isset($cabodados) ? $cabodados : '');
+$caboDados = (isset($caboDados) ? $caboDados : '');
 $statusInicial = 'Aguardando Início do Serviço';
 $codServico = uniqid();
 $query = "INSERT INTO entrada (codigoServico,idCliente,equipamento,marcaModelo,serie,placamae,memoria,hdSsd,fonte,placaVideo,leitorDvd,card,outros,dataEntrada,descDefeito,carregador,caboDados,cartucho,statusServico) VALUES(?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?,?,?)";
-
 if(!$mysqli->prepare($query)) die($mysqli->error);
-
 $sql = $mysqli->prepare($query);
-$sql->bind_param('sissssssssssssssss',$codServico,$search,$nomeProduto,$marcaModelo,$numeroSerie,$placaMaeData,$memoriaData,$hdSSdData,$fonteData,$placaVideoData,$leitorDvdData,$leitorCardData,$outrosData,$descDefeito,$carregador,$cabodados,$cartuchoData,$statusInicial);
+// montagem das strings
+$placaMae = $placaMaeMarca. '-' . $placaMaeSn;
+$memoria = $memoriaMarca. '-' .$memoriaGb. '-' .$memoriaSn;
+$hdSSd = $hdMarca. '-'. $hdGb. '-' . $hdSn;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$sql->bind_param('sissssssssssssssss',$codServico,$idCliente,$nomeProduto,$marcaModelo,$numeroSerie,$placaMaeData,$memoriaData,$hdSSdData,$fonteData,$placaVideoData,$leitorDvdData,$leitorCardData,$outrosData,$descDefeito,$carregador,$caboDados,$cartuchoData,$statusInicial);
 
 if(!$sql->execute()) die($mysqli->error);
+
+
+
+
 
 //
 //$con->changeAll('dbmy0053.whservidor.com','globoinfor1','GloboSec2415','globoinfor1');
