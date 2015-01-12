@@ -32,16 +32,16 @@
     <div class="form-group">
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Placa Mãe</label>
+            <label><input type="checkbox" name="placaMae" value="x">Placa Mãe</label>
         </div>
         <div class="form-group mt">
             <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
                 <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="placaMaeSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="placaMaeSn" id="placaMaeSn"/>
             </div>
         </div>
 
@@ -49,122 +49,114 @@
             <label><input type="checkbox" name="memoria" value="x">Memória</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="memoriaMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="memoriaMarca" id="memoriaMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">GB</label>
+            <label for="memoriaGb" class="col-sm-1 control-label">GB</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="memoriaGb" id="memoriaGb"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="memoriaSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="memoriaSn" id="memoriaSn"/>
             </div>
         </div>
 
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">HD / SSD</label>
+            <label><input type="checkbox" name="hdSsd" value="x">HD / SSD</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="hdMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="hdMarca" id="hdMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">GB</label>
+            <label for="hdGb" class="col-sm-1 control-label">GB</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="hdGb" id="hdGb"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="hdSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="hdSn" id="hdSn"/>
             </div>
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Fonte</label>
+            <label><input type="checkbox" name="fonte" value="x">Fonte</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="fonteMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="fonteMarca" id="fonteMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="fonteSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="fonteSn" id="fonteSn"/>
             </div>
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Placa de Vídeo</label>
+            <label><input type="checkbox" name="placaVideo" value="x">Placa de Vídeo</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="placaVideoMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="placaVideoMarca" id="placaVideoMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">GB</label>
+            <label for="placaVideoGb" class="col-sm-1 control-label">GB</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="placaVideoGb" id="placaVideoGb"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="placaVideoSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="placaVideoSn" id="placaVideoSn"/>
             </div>
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Leitor DVD</label>
+            <label><input type="checkbox" name="leitorDvd" value="x">Leitor DVD</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="leitorDvdMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="leitorDvdMarca" id="leitorDvdMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">GB</label>
-            <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
-            </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="leitorDvdSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="leitorDvdSn" id="leitorDvdSn"/>
             </div>
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Leitor de Cartão</label>
+            <label><input type="checkbox" name="leitorCartao" value="x">Leitor de Cartão</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="leitorCartaoMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="leitorCartaoMarca" id="leitorCartaoMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">GB</label>
-            <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
-            </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="leitorCartaoSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="leitorCartaoSn" id="leitorCartaoSn"/>
             </div>
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Outro(a)</label>
+            <label><input type="checkbox" name="outro" value="x">Outro(a)</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="outroMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="outroMarca" id="outroMarca"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">GB</label>
+            <label for="outroGb" class="col-sm-1 control-label">GB</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="outroGb" id="outroGb"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="outroSn" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="outroSn" id="outroSn"/>
             </div>
         </div>
 
@@ -179,38 +171,38 @@
             <label><input type="checkbox" name="carregador" value="x">Com carregador</label>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox" name="cabodados" value="x">Com cabo de dados</label>
+            <label><input type="checkbox" name="caboDados" value="x">Com cabo de dados</label>
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="memoria" value="x">Com Cartucho</label>
+            <label><input type="checkbox" name="cartucho" value="x">Com Cartucho</label>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="cartuchoMarcaA" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="cartuchoMarcaA" id="cartuchoMarcaA"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Cor</label>
+            <label for="cartuchoCorA" class="col-sm-1 control-label">Cor</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="cartuchoCorA" id="cartuchoCorA"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="cartuchoSnA" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="cartuchoSnA" id="cartuchoSnA"/>
             </div>
         </div>
         <div class="form-group mt">
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="cartuchoMarcaB" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="cartuchoMarcaB" id="cartuchoMarcaB"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">Cor</label>
+            <label for="cartuchoCorB" class="col-sm-1 control-label">Cor</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="cartuchoCorB" id="cartuchoCorB"/>
             </div>
-            <label for="placaMaeMarca" class="col-sm-1 control-label">S/N</label>
+            <label for="cartuchoSnB" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="placaMaeMarca" id="placaMaeMarca"/>
+                <input type="text" class="form-control" name="cartuchoSnB" id="cartuchoSnB"/>
             </div>
         </div>
 
