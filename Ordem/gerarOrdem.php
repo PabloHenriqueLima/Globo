@@ -22,7 +22,7 @@ if(!$sql = $mysqli->prepare($query)) die($mysqli->error);
 $sql->bind_param('s',$ordem);
 if(!$sql->execute()) die($mysqli->error);
 $sql->store_result();
-$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$marcaModelo,$serie,$placaMae,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$descDefeito,$carregador,$caboDados,$cartucho);
+$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$marcaModelo,$serie,$placaMae,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$infoPreliminar,$carregador,$caboDados,$cartucho);
 $sql->fetch();
 
 
@@ -86,26 +86,46 @@ list($cartuchoMarcaB,$cartuchoCorB,$cartuchoSnB) = $var;
 
 
 
-
-
 //$html = '------------------------------------------------------------------------------------------------------------------------------';
 $html = '<br/><span style="font-weight: bold">Nome: </span>'. $equipamento;
 if(!empty($marcaModelo)) $html .= ' '.$marcaModelo.' ';
 if(!empty($serie)) $html .= '<span style="font-weight: bold">Série: </span>'. $serie;
 //----------------------------------------------
-if(!empty($memoriaMarca)) $html .= '<br/><span style="font-weight: bold">Memória: </span>'. $hdMarca ;
-
-
-if(!empty($hdSSd)) $html .= '<br/><span style="font-weight: bold">Hd / Ssd: </span>'. $hdSSd;
-if(!empty($fonte)) $html .= ' <br/><span style="font-weight: bold">Fonte: </span>'. $fonte;
-if(!empty($placaVideo)) $html .= '<br/><span style="font-weight: bold">Placa de Vídeo: </span>'. $placaVideo;
-if(!empty($leitorDvd)) $html .= ' <br/><span style="font-weight: bold">Leitor de DVD: </span>'. $leitorDvd;
-if(!empty($card)) $html .= ' <br/><span style="font-weight: bold">Leitor de Cartão: </span>'. $card;
+if(!empty($memoriaMarca)) $html .= '<br/><span style="font-weight: bold">Memória: </span>'. $memoriaMarca;
+if(!empty($memoriaGb)) $html .= ' '.$memoriaGb . ' GB';
+if(!empty($memoriaSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $memoriaSn;
+//----------------------------------------------------
+if(!empty($hdMarca)) $html .= '<br/><span style="font-weight: bold">HD: </span>'. $hdMarca;
+if(!empty($hdGb)) $html .= ' '.$hdGb . ' GB';
+if(!empty($hdSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $hdSn;
+//----------------------------------------------------
+if(!empty($fonteMarca)) $html .= '<br/><span style="font-weight: bold">Fonte: </span>'.$fonteMarca;
+if(!empty($fonteGb)) $html .= ' '.$fonteGb . ' GB';
+if(!empty($fonteSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $fonteSn;
+//----------------------------------------------------
+if(!empty($placaVideoMarca)) $html .= '<br/><span style="font-weight: bold">Placa de Vídeo: </span>'.$placaVideoMarca;
+if(!empty($placaVideoGb)) $html .= ' '.$placaVideoGb . ' GB';
+if(!empty($placaVideoSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $placaVideoSn;
+//----------------------------------------------------
+if(!empty($leitorMarca)) $html .= '<br/><span style="font-weight: bold">Leitor DVD: </span>'.$leitorMarca;
+if(!empty($leitorDvdSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $leitorDvdSn;
+//----------------------------------------------------
+if(!empty($cardMarca)) $html .= '<br/><span style="font-weight: bold">Leitor Cartão: </span>'.$cardMarca;
+if(!empty($cardSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $cardSn;
+//----------------------------------------------------
 if(!empty($outros)) $html .= ' <br/><span style="font-weight: bold">Outros: </span>'. $outros;
-if(!empty($descDefeito)) $html .= ' <br/><span style="font-weight: bold">Informações Preliminares: </span>'. $descDefeito;
+if(!empty($descDefeito)) $html .= ' <br/><span style="font-weight: bold">Informações Preliminares: </span>'. $infoPreliminar;
 if(!empty($carregador)) $html .= ' <br/><span style="font-weight: bold">C/ Carregador : </span>'. $carregador;
 if(!empty($caboDados)) $html .= ' <br/><span style="font-weight: bold">Cartucho(s) : </span>'. $caboDados;
-
+//--------------------
+if(!empty($cartuchoMarcaA)) $html .= '<br/><span style="font-weight: bold">Cartucho A: </span>'.$cartuchoMarcaA;
+if(!empty($cartuchoCorA)) $html .= ' '.$cartuchoCorA;
+if(!empty($cartuchoSnA)) $html .= '<span style="font-weight: bold"> Série: </span>'. $cartuchoSnA;
+//----------------------------------------------------
+if(!empty($cartuchoMarcaB)) $html .= '<br/><span style="font-weight: bold">Cartucho B: </span>'.$cartuchoMarcaB;
+if(!empty($cartuchoCorB)) $html .= ' '.$cartuchoCorB;
+if(!empty($cartuchoSnB)) $html .= '<span style="font-weight: bold"> Série: </span>'. $cartuchoSnB;
+//----------------------------------------------------
 
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 //-----------------------------------------------------------------------
