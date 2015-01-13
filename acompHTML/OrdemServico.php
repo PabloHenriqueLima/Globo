@@ -48,17 +48,31 @@
             <label><input type="checkbox" name="memoria" value="x">Memória</label>
         </div>
         <div class="form-group mt">
-            <label for="memoriaMarca" class="col-sm-1 control-label">Marca</label>
+            <label for="memoriaMarcaA" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
-                <input type="text" class="form-control" name="memoriaMarca" id="memoriaMarca"/>
+                <input type="text" class="form-control" name="memoriaMarcaA" id="memoriaMarcaA"/>
             </div>
-            <label for="memoriaGb" class="col-sm-1 control-label">GB</label>
+            <label for="memoriaGbA" class="col-sm-1 control-label">GB</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="memoriaGb" id="memoriaGb"/>
+                <input type="text" class="form-control" name="memoriaGbA" id="memoriaGbA"/>
             </div>
-            <label for="memoriaSn" class="col-sm-1 control-label">S/N</label>
+            <label for="memoriaSnA" class="col-sm-1 control-label">S/N</label>
             <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="memoriaSn" id="memoriaSn"/>
+                <input type="text" class="form-control" name="memoriaSnA" id="memoriaSnA"/>
+            </div>
+        </div>
+        <div class="form-group mt">
+            <label for="memoriaMarcaB" class="col-sm-1 control-label">Marca</label>
+            <div class="col-sm-3 inline">
+                <input type="text" class="form-control" name="memoriaMarcaB" id="memoriaMarcaB"/>
+            </div>
+            <label for="memoriaGbB" class="col-sm-1 control-label">GB</label>
+            <div class="col-sm-2 inline">
+                <input type="text" class="form-control" name="memoriaGbB" id="memoriaGbB"/>
+            </div>
+            <label for="memoriaSnB" class="col-sm-1 control-label">S/N</label>
+            <div class="col-sm-4 inline">
+                <input type="text" class="form-control" name="memoriaSnB" id="memoriaSnB"/>
             </div>
         </div>
 

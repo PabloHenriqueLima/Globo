@@ -18,7 +18,9 @@ if(!$mysqli->prepare($query)) die($mysqli->error);
 $sql = $mysqli->prepare($query);
 // montagem das strings
 $placaMae = $placaMaeMarca. '-' . $placaMaeSn;
-$memoria = $memoriaMarca. '-' .$memoriaGb. '-' .$memoriaSn;
+$memoriaA = $memoriaMarcaA. '-' .$memoriaGbA. '-' .$memoriaSnA;
+$memoriaB = $memoriaMarcaB. '-' .$memoriaGbB. '-' .$memoriaSnB;
+$memoria = $memoriaA.'/'.$memoriaB;
 $hdSSd = $hdMarca. '-'. $hdGb. '-' . $hdSn;
 $fonte = $fonteMarca. '-' . $fonteWatts. '-' .$fonteSn;
 $placaVideo =  $placaVideoMarca. '-' .$placaVideoGb. '-' .$placaVideoSn;

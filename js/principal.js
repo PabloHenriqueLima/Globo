@@ -116,12 +116,13 @@ $(".cadastroOrdem .checkbox input").click(function () {
     var obj = $(obj).next();
 
     if($(this).prop("checked")){
-        if($thisName == 'cartucho') $(obj).next().show();
+        if($thisName == 'cartucho' || $thisName == 'memoria' ) $(obj).next().show();
         $(obj).show();
     }else{
         if($thisName == 'caboDados' || $thisName == 'carregador') return;
         $(obj).hide();
         if($thisName == 'cartucho') $(obj).next().hide();
+        if($thisName == 'memoria') $(obj).next().hide();
     }
 });
 
@@ -339,13 +340,6 @@ $("#gerarGarantia").click(function () {
         $("#formBaixa .checkbox").hide();
     }
 });
-
-
-
-
-
-
-
 
 
 

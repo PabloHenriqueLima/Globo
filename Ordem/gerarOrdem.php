@@ -59,8 +59,12 @@ $pdf->ln(4);
 $html = '<span style="font-weight: bold">DESCRIÇÃO DO EQUIPAMENTO</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 //----- Explodindo as variaveis ------- //
-$var = explode('-',$memoria);
-list($memoriaMarca,$memoriaGb,$memoriaSn) = $var;
+$var = explode('/',$memoria);
+list($memoriaA,$memoriaB) = $var;
+$var = explode('-',$memoriaA);
+list($memoriaMarcaA,$memoriaGbA,$memoriaSnA) = $var;
+$var = explode('-',$memoriaB);
+list($memoriaMarcaB,$memoriaGbB,$memoriaSnB) = $var;
 
 $var = explode('-',$hdSSd);
 list($hdMarca,$hdGb,$hdSn) = $var;
@@ -91,9 +95,13 @@ $html = '<br/><span style="font-weight: bold">Nome: </span>'. $equipamento;
 if(!empty($marcaModelo)) $html .= ' '.$marcaModelo.' ';
 if(!empty($serie)) $html .= '<span style="font-weight: bold">Série: </span>'. $serie;
 //----------------------------------------------
-if(!empty($memoriaMarca)) $html .= '<br/><span style="font-weight: bold">Memória: </span>'. $memoriaMarca;
-if(!empty($memoriaGb)) $html .= ' '.$memoriaGb . ' GB';
-if(!empty($memoriaSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $memoriaSn;
+if(!empty($memoriaMarcaA)) $html .= '<br/><span style="font-weight: bold">Memória(s): </span>'. $memoriaMarcaA;
+if(!empty($memoriaGbA)) $html .= ' '.$memoriaGbA . ' GB';
+if(!empty($memoriaSnA)) $html .= '<span style="font-weight: bold"> Série: </span>'. $memoriaSnA;
+//
+if(!empty($memoriaMarcaB)) $html .= ' '. $memoriaMarcaB;
+if(!empty($memoriaGbB)) $html .= ' '.$memoriaGbB . ' GB';
+if(!empty($memoriaSnB)) $html .= '<span style="font-weight: bold"> Série: </span>'. $memoriaSnB;
 //----------------------------------------------------
 if(!empty($hdMarca)) $html .= '<br/><span style="font-weight: bold">HD: </span>'. $hdMarca;
 if(!empty($hdGb)) $html .= ' '.$hdGb . ' GB';
