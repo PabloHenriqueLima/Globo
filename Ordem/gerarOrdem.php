@@ -66,7 +66,7 @@ $var = explode('-',$hdSSd);
 list($hdMarca,$hdGb,$hdSn) = $var;
 
 $var = explode('-',$fonte);
-list($fonteMarca,$fonteGb,$fonteSn) = $var;
+list($fonteMarca,$fonteWatts,$fonteSn) = $var;
 
 $var = explode('-',$placaVideo);
 list($placaVideoMarca,$placaVideoGb,$placaVideoSn) = $var;
@@ -100,7 +100,7 @@ if(!empty($hdGb)) $html .= ' '.$hdGb . ' GB';
 if(!empty($hdSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $hdSn;
 //----------------------------------------------------
 if(!empty($fonteMarca)) $html .= '<br/><span style="font-weight: bold">Fonte: </span>'.$fonteMarca;
-if(!empty($fonteGb)) $html .= ' '.$fonteGb . ' GB';
+if(!empty($fonteWatts)) $html .= ' '.$fonteWatts . ' W';
 if(!empty($fonteSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $fonteSn;
 //----------------------------------------------------
 if(!empty($placaVideoMarca)) $html .= '<br/><span style="font-weight: bold">Placa de Vídeo: </span>'.$placaVideoMarca;
@@ -114,9 +114,8 @@ if(!empty($cardMarca)) $html .= '<br/><span style="font-weight: bold">Leitor Car
 if(!empty($cardSn)) $html .= '<span style="font-weight: bold"> Série: </span>'. $cardSn;
 //----------------------------------------------------
 if(!empty($outros)) $html .= ' <br/><span style="font-weight: bold">Outros: </span>'. $outros;
-if(!empty($descDefeito)) $html .= ' <br/><span style="font-weight: bold">Informações Preliminares: </span>'. $infoPreliminar;
+if(!empty($infoPreliminar)) $html .= ' <br/><span style="font-weight: bold">Informações Preliminares: </span>'. $infoPreliminar;
 if(!empty($carregador)) $html .= ' <br/><span style="font-weight: bold">C/ Carregador : </span>'. $carregador;
-if(!empty($caboDados)) $html .= ' <br/><span style="font-weight: bold">Cartucho(s) : </span>'. $caboDados;
 //--------------------
 if(!empty($cartuchoMarcaA)) $html .= '<br/><span style="font-weight: bold">Cartucho A: </span>'.$cartuchoMarcaA;
 if(!empty($cartuchoCorA)) $html .= ' '.$cartuchoCorA;
