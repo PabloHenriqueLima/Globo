@@ -99,7 +99,7 @@ if(!empty($marcaModelo)) $html .= ' '.$marcaModelo.' ';
 if(!empty($serie)) $html .= '<span style="font-weight: bold">S/N: </span>'. $serie;
 //----------------------------------------------
 if(!empty($processadorMarca)) $html .= '<br/><span style="font-weight: bold">Processador : </span>'. $processadorMarca;
-if(!empty($processadorFreq)) $html .= ' '.$processadorFreq;
+if(!empty($processadorMarca)) $html .= ' '.$processadorFreq;
 if(!empty($processadorBarr)) $html .= '<span style="font-weight: bold"> Barramento: </span>'. $processadorBarr;
 //-------------------------
 if(!empty($memoriaMarcaA)) $html .= '<br/><span style="font-weight: bold">Memória(s): </span>'. $memoriaMarcaA;
@@ -112,7 +112,7 @@ if(!empty($memoriaGbB)) $html .= ' '.$memoriaGbB;
 if(!empty($memoriaSnB)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $memoriaSnB;
 //----------------------------------------------------
 if(!empty($hdMarca)) $html .= '<br/><span style="font-weight: bold">HD: </span>'. $hdMarca;
-if(!empty($hdGb)) $html .= ' '.$hdGb;
+if(!empty($hdMarca)) $html .= ' '.$hdGb;
 if(!empty($hdSn)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $hdSn;
 //----------------------------------------------------
 if(!empty($fonteMarca)) $html .= '<br/><span style="font-weight: bold">Fonte: </span>'.$fonteMarca;
