@@ -15,14 +15,14 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 if(!isset($_GET['ordem']) OR empty($_GET['ordem'])) die('Serviço não fornecido');
 $ordem = $_GET['ordem'];
 //------------------------------------------------
-$query = "select cli.id,cli.nomeCliente,cli.cpfCliente,cli.endCliente,cli.bairroCliente,cli.cepCliente, cli.telefoneCliente,ent.equipamento,ent.marcaModelo,ent.serie,ent.placaMae,ent.memoria,ent.hdSsd,ent.fonte,ent.placaVideo,ent.leitorDvd,ent.card,ent.outros,ent.dataEntrada,ent.descDefeito,ent.carregador,ent.caboDados,ent.cartucho
+$query = "select cli.id,cli.nomeCliente,cli.cpfCliente,cli.endCliente,cli.bairroCliente,cli.cepCliente, cli.telefoneCliente,ent.equipamento,ent.marcaModelo,ent.serie,ent.placaMae,ent.processador,ent.memoria,ent.hdSsd,ent.fonte,ent.placaVideo,ent.leitorDvd,ent.card,ent.outros,ent.dataEntrada,ent.descDefeito,ent.carregador,ent.caboDados,ent.cartucho
 from entrada ent INNER JOIN clientes cli ON ent.idCliente = cli.id WHERE codigoServico = ?";
 
 if(!$sql = $mysqli->prepare($query)) die($mysqli->error);
 $sql->bind_param('s',$ordem);
 if(!$sql->execute()) die($mysqli->error);
 $sql->store_result();
-$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$marcaModelo,$serie,$placaMae,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$infoPreliminar,$carregador,$caboDados,$cartucho);
+$sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$marcaModelo,$serie,$placaMae,$processador,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$infoPreliminar,$carregador,$caboDados,$cartucho);
 $sql->fetch();
 
 
@@ -59,6 +59,9 @@ $pdf->ln(4);
 $html = '<span style="font-weight: bold">DESCRIÇÃO DO EQUIPAMENTO</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 //----- Explodindo as variaveis ------- //
+$var = explode('+',$processador);
+list($processadorMarca,$processadorFreq,$processadorBarr) = $var;
+
 $var = explode('/',$memoria);
 list($memoriaA,$memoriaB) = $var;
 $var = explode('+',$memoriaA);
@@ -95,10 +98,14 @@ $html = '<br/><span style="font-weight: bold"></span>'. $equipamento;
 if(!empty($marcaModelo)) $html .= ' '.$marcaModelo.' ';
 if(!empty($serie)) $html .= '<span style="font-weight: bold">S/N: </span>'. $serie;
 //----------------------------------------------
+if(!empty($processadorMarca)) $html .= '<br/><span style="font-weight: bold">Processador : </span>'. $processadorMarca;
+if(!empty($processadorFreq)) $html .= ' '.$processadorFreq;
+if(!empty($processadorBarr)) $html .= '<span style="font-weight: bold"> Barramento: </span>'. $processadorBarr;
+//-------------------------
 if(!empty($memoriaMarcaA)) $html .= '<br/><span style="font-weight: bold">Memória(s): </span>'. $memoriaMarcaA;
 if(!empty($memoriaGbA)) $html .= ' '.$memoriaGbA;
 if(!empty($memoriaSnA)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $memoriaSnA;
-//
+//-------------------------
 if(!empty($memoriaMarcaB)) $html .= ' e ';
 if(!empty($memoriaMarcaB)) $html .= ' '. $memoriaMarcaB;
 if(!empty($memoriaGbB)) $html .= ' '.$memoriaGbB;

@@ -18,11 +18,11 @@ if(!$mysqli->prepare($query)) die($mysqli->error);
 $sql = $mysqli->prepare($query);
 // montagem das strings
 $placaMae = $placaMaeMarca. '+' . $placaMaeSn;
-$processador = $processadorMarca. '+' . $processadorfreq. '+' . $processadorBarr;
+$processador = $processadorMarca. '+' . $processadorfreq. ' Ghz+' . $processadorBarr;
 $memoriaA = $memoriaMarcaA. '+' .$memoriaGbA. '+' .$memoriaSnA;
 $memoriaB = $memoriaMarcaB. '+' .$memoriaGbB. '+' .$memoriaSnB;
 $memoria = $memoriaA.'/'.$memoriaB;
-$hdSSd = $hdMarca. '+'. $hdGb. '+' . $hdSn;
+$hdSSd = $hdMarca. '+'. $hdGb. ' GB+' . $hdSn;
 $fonte = $fonteMarca. '+' . $fonteWatts. '+' .$fonteSn;
 $placaVideo =  $placaVideoMarca. '+' .$placaVideoGb. '+' .$placaVideoSn;
 $leitorDvd = $leitorDvdMarca. '+' .$leitorDvdSn;
