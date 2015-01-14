@@ -15,7 +15,7 @@ $sql->execute();
 $sql->store_result();
 $sql->bind_result($id,$nome,$cpf,$endereco,$bairro,$cep,$telefone,$telefoneB,$dataCadastro);
 
-if($sql->num_rows >= 30){
+if($sql->num_rows >= 5){
     echo "Seja mais específico";
 }elseif(!$sql->num_rows >= 1){
     echo 'Cliente não encontrado, procure por outro nome !!!';

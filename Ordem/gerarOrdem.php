@@ -30,7 +30,7 @@ $sql->fetch();
 //add page
 $pdf->AddPage();
 //html content
-$pdf->Ln(10);
+$pdf->Ln(20);
 
 //writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=false, $reseth=true, $align='', $autopadding=true)
 
@@ -40,7 +40,7 @@ $pdf->Ln(10);
 $html = '<span style="font-weight: bold; font-size: x-large">ORDEM DE SERVIÇO N°: </span>'.'<span style="font-size: x-large">'. $ordem . '</span>';
 
 $pdf->writeHTMLCell(0, 0, '55', '', $html, '', 1, 0, true, 'L', true);
-$pdf->ln(8);
+$pdf->ln(2);
 $html = '<span style="font-weight: bold">DADOS DO CLIENTE</span>';
 $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 

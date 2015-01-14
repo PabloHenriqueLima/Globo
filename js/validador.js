@@ -97,7 +97,7 @@ $(document).ready(function() {
             alertify.confirm("Cadastrar cliente ?", function (ok) {
                 if (ok) {
                     $.post(dirClientePHP+"cadastrarCliente.php", $form.serialize(), function (result) {
-                        alert(result);
+                        alertify.alert(result);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
                     });

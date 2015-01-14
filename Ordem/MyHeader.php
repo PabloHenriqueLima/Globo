@@ -16,7 +16,9 @@ public function Header() {
     $this->Cell(0,9,'www.globo-informatica.com',0,2, 'C', 0, '', 0, false, 'M', 'M');
     $this->Cell(0,9,'globoinformaticadirceu@gmail.com',0,2, 'C', 0, '', 0, false, 'M', 'M');
     $this->Cell(0,9,'Quadra 163, Casa 18, Dirceu II, CEP: 64078-040',0, 2, 'C', 0, '', 0, false, 'M', 'M');
-    $this->Cell(0,9,'Contatos: (86) 3231-8186 / (86) 8859-7086',0,2, 'C', 0, '', 0, false, 'M', 'M');
+    $this->Cell(0,11,'Contatos: (86) 3231-8186 / (86) 8859-7086',0,2, 'C', 0, '', 0, false, 'M', 'M');
+    $this->Cell(0,9,'Loja especializada em manutenção de computadores, monitores',0,2, 'C', 0, '', 0, false, 'M', 'M');
+    $this->Cell(0,9,'impressoras, notebooks, fontes, estabilizadores, etc.',0,2, 'C', 0, '', 0, false, 'M', 'M');
 
 
     }
