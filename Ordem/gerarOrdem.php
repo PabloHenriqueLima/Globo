@@ -61,51 +61,51 @@ $pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
 //----- Explodindo as variaveis ------- //
 $var = explode('/',$memoria);
 list($memoriaA,$memoriaB) = $var;
-$var = explode('-',$memoriaA);
+$var = explode('+',$memoriaA);
 list($memoriaMarcaA,$memoriaGbA,$memoriaSnA) = $var;
-$var = explode('-',$memoriaB);
+$var = explode('+',$memoriaB);
 list($memoriaMarcaB,$memoriaGbB,$memoriaSnB) = $var;
 
-$var = explode('-',$hdSSd);
+$var = explode('+',$hdSSd);
 list($hdMarca,$hdGb,$hdSn) = $var;
 
-$var = explode('-',$fonte);
+$var = explode('+',$fonte);
 list($fonteMarca,$fonteWatts,$fonteSn) = $var;
 
-$var = explode('-',$placaVideo);
+$var = explode('+',$placaVideo);
 list($placaVideoMarca,$placaVideoGb,$placaVideoSn) = $var;
 
-$var = explode('-',$leitorDvd);
+$var = explode('+',$leitorDvd);
 list($leitorMarca,$leitorDvdSn) = $var;
 
-$var = explode('-',$card);
+$var = explode('+',$card);
 list($cardMarca,$cardSn) = $var;
 
 $var = explode('/',$cartucho);
 list($cartuchoA,$cartuchoB) = $var;
-$var = explode('-',$cartuchoA);
+$var = explode('+',$cartuchoA);
 list($cartuchoMarcaA,$cartuchoCorA,$cartuchoSnA) = $var;
-$var = explode('-',$cartuchoB);
+$var = explode('+',$cartuchoB);
 list($cartuchoMarcaB,$cartuchoCorB,$cartuchoSnB) = $var;
 
 
 
 //$html = '------------------------------------------------------------------------------------------------------------------------------';
-$html = '<br/><span style="font-weight: bold">Nome: </span>'. $equipamento;
+$html = '<br/><span style="font-weight: bold"></span>'. $equipamento;
 if(!empty($marcaModelo)) $html .= ' '.$marcaModelo.' ';
 if(!empty($serie)) $html .= '<span style="font-weight: bold">S/N: </span>'. $serie;
 //----------------------------------------------
 if(!empty($memoriaMarcaA)) $html .= '<br/><span style="font-weight: bold">Memória(s): </span>'. $memoriaMarcaA;
-if(!empty($memoriaGbA)) $html .= ' '.$memoriaGbA . ' GB';
+if(!empty($memoriaGbA)) $html .= ' '.$memoriaGbA;
 if(!empty($memoriaSnA)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $memoriaSnA;
 //
-if(!empty($memoriaMarcaB)) $html .= ' / ';
+if(!empty($memoriaMarcaB)) $html .= ' + ';
 if(!empty($memoriaMarcaB)) $html .= ' '. $memoriaMarcaB;
-if(!empty($memoriaGbB)) $html .= ' '.$memoriaGbB . ' GB';
+if(!empty($memoriaGbB)) $html .= ' '.$memoriaGbB;
 if(!empty($memoriaSnB)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $memoriaSnB;
 //----------------------------------------------------
 if(!empty($hdMarca)) $html .= '<br/><span style="font-weight: bold">HD: </span>'. $hdMarca;
-if(!empty($hdGb)) $html .= ' '.$hdGb . ' GB';
+if(!empty($hdGb)) $html .= ' '.$hdGb;
 if(!empty($hdSn)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $hdSn;
 //----------------------------------------------------
 if(!empty($fonteMarca)) $html .= '<br/><span style="font-weight: bold">Fonte: </span>'.$fonteMarca;
@@ -113,7 +113,7 @@ if(!empty($fonteWatts)) $html .= ' '.$fonteWatts . ' W';
 if(!empty($fonteSn)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $fonteSn;
 //----------------------------------------------------
 if(!empty($placaVideoMarca)) $html .= '<br/><span style="font-weight: bold">Placa de Vídeo: </span>'.$placaVideoMarca;
-if(!empty($placaVideoGb)) $html .= ' '.$placaVideoGb . ' GB';
+if(!empty($placaVideoGb)) $html .= ' '.$placaVideoGb;
 if(!empty($placaVideoSn)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $placaVideoSn;
 //----------------------------------------------------
 if(!empty($leitorMarca)) $html .= '<br/><span style="font-weight: bold">Leitor DVD: </span>'.$leitorMarca;
@@ -124,7 +124,14 @@ if(!empty($cardSn)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $c
 //----------------------------------------------------
 if(!empty($outros)) $html .= ' <br/><span style="font-weight: bold">Outros: </span>'. $outros;
 if(!empty($infoPreliminar)) $html .= ' <br/><span style="font-weight: bold">Informações Preliminares: </span>'. $infoPreliminar;
-if(!empty($carregador)) $html .= ' <br/><span style="font-weight: bold">C/ Carregador : </span>'. $carregador;
+if(empty($carregador)){
+
+}else{
+    $carregador = 'Sim';
+    $html .= ' <br/><span style="font-weight: bold">C/ Carregador : </span>'. $carregador;
+}
+
+
 //--------------------
 if(!empty($cartuchoMarcaA)) $html .= '<br/><span style="font-weight: bold">Cartucho A: </span>'.$cartuchoMarcaA;
 if(!empty($cartuchoCorA)) $html .= ' '.$cartuchoCorA;

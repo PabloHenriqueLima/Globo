@@ -6,7 +6,7 @@ class MyHeader extends TCPDF {
 public function Header() {
     // Logo
     $image_file = K_PATH_IMAGES.'img/globo-logo-pdf.png';
-    $this->Image($image_file, 10, 5,20, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+    $this->Image($image_file, 10, 6,22, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
     // Set font
     $this->SetFont('helvetica', 'B', 20);
     // Title

@@ -17,17 +17,17 @@ $query = "INSERT INTO entrada (codigoServico,idCliente,equipamento,marcaModelo,s
 if(!$mysqli->prepare($query)) die($mysqli->error);
 $sql = $mysqli->prepare($query);
 // montagem das strings
-$placaMae = $placaMaeMarca. '-' . $placaMaeSn;
-$memoriaA = $memoriaMarcaA. '-' .$memoriaGbA. '-' .$memoriaSnA;
-$memoriaB = $memoriaMarcaB. '-' .$memoriaGbB. '-' .$memoriaSnB;
+$placaMae = $placaMaeMarca. '+' . $placaMaeSn;
+$memoriaA = $memoriaMarcaA. '+' .$memoriaGbA. '+' .$memoriaSnA;
+$memoriaB = $memoriaMarcaB. '+' .$memoriaGbB. '+' .$memoriaSnB;
 $memoria = $memoriaA.'/'.$memoriaB;
-$hdSSd = $hdMarca. '-'. $hdGb. '-' . $hdSn;
-$fonte = $fonteMarca. '-' . $fonteWatts. '-' .$fonteSn;
-$placaVideo =  $placaVideoMarca. '-' .$placaVideoGb. '-' .$placaVideoSn;
-$leitorDvd = $leitorDvdMarca. '-' .$leitorDvdSn;
-$leitorCartão = $leitorCartaoMarca . '-' .$leitorCartaoSn;
-$cartuchoA = $cartuchoMarcaA. '-' .$cartuchoCorA. '-' .$cartuchoSnA;
-$cartuchoB = $cartuchoMarcaB. '-' .$cartuchoCorB. '-' .$cartuchoSnB;
+$hdSSd = $hdMarca. '+'. $hdGb. '+' . $hdSn;
+$fonte = $fonteMarca. '+' . $fonteWatts. '+' .$fonteSn;
+$placaVideo =  $placaVideoMarca. '+' .$placaVideoGb. '+' .$placaVideoSn;
+$leitorDvd = $leitorDvdMarca. '+' .$leitorDvdSn;
+$leitorCartão = $leitorCartaoMarca . '+' .$leitorCartaoSn;
+$cartuchoA = $cartuchoMarcaA. '+' .$cartuchoCorA. '+' .$cartuchoSnA;
+$cartuchoB = $cartuchoMarcaB. '+' .$cartuchoCorB. '+' .$cartuchoSnB;
 $cartucho = $cartuchoA.'/'.$cartuchoB;
 
 $sql->bind_param('sissssssssssssssss',$codServico,$idCliente,$equipamento,$marcaModelo,$serie,$placaMae,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$leitorCartão,$outros,$infoPreliminar,$carregador,$caboDados,$cartucho,$statusInicial);

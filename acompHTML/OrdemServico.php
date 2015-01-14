@@ -18,11 +18,11 @@
     </div>
     <div class="form-group">
         <label for="marcaModelo" class="col-sm-2 control-label">Marca/Modelo</label>
-        <div class="col-sm-4 inline">
+        <div class="col-sm-3 inline">
             <input type="text" name="marcaModelo" class="form-control" id="marcaModelo" placeholder="Marca / Modelo">
         </div>
         <label for="numeroSerie" class="col-sm-2 control-label">S/N</label>
-        <div class="col-sm-4 inline">
+        <div class="col-sm-3 inline">
             <input type="text" name="serie" class="form-control" id="numeroSerie" placeholder="Número de Série">
         </div>
     </div>
@@ -43,6 +43,25 @@
                 <input type="text" class="form-control" name="placaMaeSn" id="placaMaeSn"/>
             </div>
         </div>
+
+        <div class="checkbox">
+            <label><input type="checkbox" name="placaMae" value="x">Processador</label>
+        </div>
+        <div class="form-group mt">
+            <label for="processadorMarca" class="col-sm-1 control-label">Marca</label>
+            <div class="col-sm-3 inline">
+                <input type="text" class="form-control" name="processadorMarca" id="processadorMarca"/>
+            </div>
+            <label for="freq" class="col-sm-1 control-label">Freq.</label>
+            <div class="col-sm-2 inline">
+                <input type="text" class="form-control" name="freq" id="freq"/>
+            </div>
+            <label for="freq" class="col-sm-1 control-label">S/N.</label>
+            <div class="col-sm-4 inline">
+                <input type="text" class="form-control" name="freq" id="freq"/>
+            </div>
+        </div>
+
 
         <div class="checkbox">
             <label><input type="checkbox" name="memoria" value="x">Memória</label>
