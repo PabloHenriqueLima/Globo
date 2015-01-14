@@ -45,20 +45,20 @@
         </div>
 
         <div class="checkbox">
-            <label><input type="checkbox" name="placaMae" value="x">Processador</label>
+            <label><input type="checkbox" name="processador" value="x">Processador</label>
         </div>
         <div class="form-group mt">
             <label for="processadorMarca" class="col-sm-1 control-label">Marca</label>
             <div class="col-sm-3 inline">
                 <input type="text" class="form-control" name="processadorMarca" id="processadorMarca"/>
             </div>
-            <label for="freq" class="col-sm-1 control-label">Freq.</label>
+            <label for="processadorfreq" class="col-sm-1 control-label">Freq.</label>
             <div class="col-sm-2 inline">
-                <input type="text" class="form-control" name="freq" id="freq"/>
+                <input type="text" class="form-control" name="processadorfreq" id="processadorfreq"/>
             </div>
-            <label for="freq" class="col-sm-1 control-label">S/N.</label>
-            <div class="col-sm-4 inline">
-                <input type="text" class="form-control" name="freq" id="freq"/>
+            <label for="processadorBarr" class="col-sm-1 control-label">Barr.</label>
+            <div class="col-sm-2 inline">
+                <input type="text" class="form-control" name="processadorBarr" id="processadorBarr"/>
             </div>
         </div>
 

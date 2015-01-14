@@ -99,7 +99,7 @@ if(!empty($memoriaMarcaA)) $html .= '<br/><span style="font-weight: bold">Memór
 if(!empty($memoriaGbA)) $html .= ' '.$memoriaGbA;
 if(!empty($memoriaSnA)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $memoriaSnA;
 //
-if(!empty($memoriaMarcaB)) $html .= ' + ';
+if(!empty($memoriaMarcaB)) $html .= ' e ';
 if(!empty($memoriaMarcaB)) $html .= ' '. $memoriaMarcaB;
 if(!empty($memoriaGbB)) $html .= ' '.$memoriaGbB;
 if(!empty($memoriaSnB)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $memoriaSnB;
