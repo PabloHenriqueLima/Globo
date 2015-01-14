@@ -6,7 +6,7 @@ dirGarantiaPHP = 'garantiaPHP/';
 function setConfig (){
     alertify.set({
         labels : {
-            ok     : "Sim",
+            ok     : "OK",
             cancel : "Agora não"
         },
         delay : 10,
@@ -161,13 +161,13 @@ $(document).ready(function() {
             e.preventDefault();
             var $form = $(e.target);
             setConfig();
-            alertify.confirm("Gerar Ordem de Serviço ?", function (ok) {
+            alertify.confirm("Gerar ordem de Serviço ?", function (ok) {
                 if (ok) {
                     var formS = $form.serialize();
                     console.log(formS);
                     $.post(dirAcompPHP+"cadastrarOrdem.php", $form.serialize(), function (result) {
                         window.localStorage.setItem('ultimoCodigo',result);
-                        alertify.alert('Serviço cadastrado com sucesso, anote o código do serviço: ' + result);
+                        alertify.alert('Serviço cadastrado com sucesso' + '<br /> <a target="_blank" href="ordem/gerarOrdem.php?ordem='+ result+'"><button type="submit" class="btn btn-success btn-lg btn-custom">Imprimir Ordem</button></a>');
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
                         $("#verUltimoServico").show();
