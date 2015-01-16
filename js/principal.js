@@ -129,7 +129,9 @@ $(".cadastroOrdem .checkbox input").click(function () {
 // @ ULTIMO SERVIÇO @ //
 
 $(document).on("click","#btn_verUltimoServico", function () {
-    alertify.alert('O código da ultimo Ordem cadastrada é: ' + window.localStorage.getItem('ultimoCodigo'));
+    alertify.alert('O código da ultima ordem cadastrada é: ' + window.localStorage.getItem('ultimoCodigo')+
+    '<br /> <a target="_blank" href="ordem/gerarOrdem.php?ordem='+ window.localStorage.getItem('ultimoCodigo')+'"><button type="submit" class="btn btn-success btn-lg btn-custom">Imprimir Ordem</button></a>'
+    );
 });
 
 // @ ativação de statuses @//
@@ -342,8 +344,17 @@ $("#gerarGarantia").click(function () {
 });
 
 
-
-
+// @ Ativar Orçamento @ //
+$("#ativarOrcamento").click(function () {
+        var valor = prompt('Insira o valor do orçamento em R$');
+        var referente = prompt('Descrição do orçamento');
+        var codigoServico = $("#codigoServicoStatus").val();
+        if(valor && referente){
+            $.post(dirAcompPHP+'gravarOrcamento.php',{codigoServico:codigoServico,referente:referente,valor:valor}, function (response) {
+                alertify.success(response);
+            });
+    }
+});
 
 
 

@@ -24,8 +24,6 @@ if(!$sql->execute()) die($mysqli->error);
 $sql->store_result();
 $sql->bind_result($id,$nomeCliente,$cpfCliente,$endereco,$bairro,$cep,$telefoneCliente,$equipamento,$marcaModelo,$serie,$placaMae,$processador,$memoria,$hdSSd,$fonte,$placaVideo,$leitorDvd,$card,$outros,$dataEntrada,$infoPreliminar,$carregador,$caboDados,$cartucho);
 $sql->fetch();
-
-
 //---------------------------------------------------------------------
 //add page
 $pdf->AddPage();
@@ -33,9 +31,7 @@ $pdf->AddPage();
 $pdf->Ln(20);
 
 //writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=false, $reseth=true, $align='', $autopadding=true)
-
 // Print some HTML Cells
-
 
 $html = '<span style="font-weight: bold; font-size: x-large">ORDEM DE SERVIÇO N°: </span>'.'<span style="font-size: x-large">'. $ordem . '</span>';
 
@@ -137,14 +133,12 @@ if(empty($carregador)){
     $carregador = 'Sim';
     $html .= ' <br/><span style="font-weight: bold">C/ Carregador : </span>'. $carregador;
 }
-
-
 //--------------------
-if(!empty($cartuchoMarcaA)) $html .= '<br/><span style="font-weight: bold">Cartucho A: </span>'.$cartuchoMarcaA;
+if(!empty($cartuchoMarcaA)) $html .= '<br/><span style="font-weight: bold">Cartucho(s): </span>'.$cartuchoMarcaA;
 if(!empty($cartuchoCorA)) $html .= ' '.$cartuchoCorA;
 if(!empty($cartuchoSnA)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $cartuchoSnA;
 //----------------------------------------------------
-if(!empty($cartuchoMarcaB)) $html .= '<br/><span style="font-weight: bold">Cartucho B: </span>'.$cartuchoMarcaB;
+if(!empty($cartuchoMarcaB)) $html .= ' e '.$cartuchoMarcaB;
 if(!empty($cartuchoCorB)) $html .= ' '.$cartuchoCorB;
 if(!empty($cartuchoSnB)) $html .= '<span style="font-weight: bold"> S/N: </span>'. $cartuchoSnB;
 //----------------------------------------------------
@@ -156,8 +150,8 @@ $quebrarInicio = explode(" ",$dataEntrada);
 list($data,$horario) = $quebrarInicio;
 $quebrarData = explode("-",$data);
 list($ano,$mes,$dia) = $quebrarData;
-$dataI = date('d-m-Y',mktime(0,0,0,$mes,$dia,$ano));
-$dataF = date('d-m-Y',mktime(0,0,0,$mes,$dia + 2,$ano));
+$dataI = date('d/m/Y',mktime(0,0,0,$mes,$dia,$ano));
+$dataF = date('d/m/Y',mktime(0,0,0,$mes,$dia + 2,$ano));
 
 $dataEntrada = $dataI.' '.$horario;
 $dataSaida = $dataF.' '.$horario;
@@ -165,7 +159,12 @@ $dataSaida = $dataF.' '.$horario;
 
 $html = ' <br/><span style="font-weight: bold">ENTRADA: </span>'. $dataEntrada;
 $html .= ' - <span style="font-weight: bold">ORÇAMENTO EM ATÉ 72 Hhs </span>';
-$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'C', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+//------------------------------------
+$html = '<span style="font-weight: bold">AUTORIZADO SIM ( _ ) NÃO ( _ )</span>';
+$html .= ' <span style="font-weight: bold">SAÍDA: ____/____/_____ </span>';
+$html .= ' <span style="font-weight: bold">ORÇAMENTO.: R$ _________ </span>';
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
 //-------------------------------------------------------------------------------------
 $html = '------------------------------------------------------------------------------------------------------------------------------';
 $html .= ' <br/><span style="font-weight: bold">OBS*: </span>'. 'Cabe ao cliente acima citado, retirar o seu equipamento em um prazo

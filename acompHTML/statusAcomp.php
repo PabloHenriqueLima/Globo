@@ -1,12 +1,12 @@
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
 
-<h4  class="text-center">Status do Serviço</h4>
+<h4  class="text-center">Status da Ordem de Serviço</h4>
 
 <form class="form-horizontal" method="post" id="frm_Status"><!-- FORMULÁRIO CADASTRO -->
     <div class="form-group">
         <div class="col-sm-7">
             <div class="input-group">
-                <span class="input-group-addon">Código de serviço-></span>
+                <span class="input-group-addon">Número da Ordem-></span>
                 <input type="text" id="codigoServicoStatus" name="codigoServicoStatus" class="form-control" maxlength="13" placeholder="Código do serviço">
             </div>
         </div>
@@ -32,6 +32,10 @@
 </form> <!-- FORMULÁRIO BUSCAR SERVIÇO -->
 <h4  class="text-center">Status Padrões</h4>
 <div class="col-lg-12">
+    <span>Aguardando aprovação do orçamento</span>
+    <button type="button" class="btn btn-warning statuses" id="ativarOrcamento" href="#">Ativar</button>
+</div>
+<div class="col-lg-12">
     <span>Maquina Aberta: Manutenção em andamento.....</span>
     <button type="button" class="btn btn-warning statuses" href="#">Ativar</button>
 </div>
@@ -51,3 +55,4 @@
     <span>Maquina Aberta: Problemas nos componentes físicos, favor comparecer à loja.</span>
     <button type="button" class="btn btn-warning statuses" href="#">Ativar</button>
 </div>
+.
