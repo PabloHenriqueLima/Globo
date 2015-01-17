@@ -67,7 +67,9 @@ textarea {
     padding: 7px;
     display: none;
 }
-
+#ativarStatus{
+    margin-top: 10px;
+}
 #formBaixa .checkbox{
     display: none;
 }
@@ -129,6 +131,7 @@ td{
 }
 .statuses{
     display: none;
+    margin-top: 5px;
 }
 #ativarStatus{
     display: none;
