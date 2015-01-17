@@ -11,7 +11,7 @@ function setConfig (){
         },
         delay : 10,
         buttonReverse : false,
-        buttonFocus   : "Sim"
+        buttonFocus   : "OK"
     });
 }
 $(document).ready(function() {
@@ -167,7 +167,7 @@ $(document).ready(function() {
                     console.log(formS);
                     $.post(dirAcompPHP+"cadastrarOrdem.php", $form.serialize(), function (result) {
                         window.localStorage.setItem('ultimoCodigo',result);
-                        alertify.alert('Serviço cadastrado com sucesso' + '<br /> <a target="_blank" href="ordem/gerarOrdem.php?ordem='+ result+'"><button type="submit" class="btn btn-success btn-lg btn-custom">Imprimir Ordem</button></a>');
+                        alertify.alert('Serviço cadastrado com sucesso' + '<br /> <a target="_blank" href="ordem/gerarOrdem.php?ordem='+ result +'"><button type="submit" class="btn btn-success btn-lg btn-custom">Imprimir Ordem</button></a>');
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
                         $("#verUltimoServico").show();
@@ -284,7 +284,7 @@ $(document).ready(function() {
         .on('success.field.bv', function(e, data) {
             if(data.field === "codigoServicoStatus"){
                 var codigoServico =  $("#codigoServicoStatus").val();
-                $.post(dirAcompPHP+'statusServico.php',{codigoServico:codigoServico}, function (response) {
+                $.post(dirAcompPHP+'statusOrdem.php',{codigoServico:codigoServico}, function (response) {
                     if(!response){
                         $("#frm_Status").data('bootstrapValidator')
                             .updateStatus(data.field, 'INVALID')
@@ -293,7 +293,9 @@ $(document).ready(function() {
                     }else {
                         var dat = JSON.parse(response);
                         $(".statusAtual").text(dat.statusAtual);
-                        $("#equipamento").val(dat.equipamento);
+                        $("#equip").val(dat.equipamento);
+                        console.log(dat.cliente);
+                        $("#nomeCli").val(dat.cliente);
                         $(".statuses").show();
                         $("#ativarStatus ").show();
                     }

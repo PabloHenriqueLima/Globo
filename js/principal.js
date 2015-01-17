@@ -97,7 +97,7 @@ $(document).on("click","#btn_deletar", function () {
     });
 
 });
-// @ BUSCAR CLIENTE NA ENTRADA DO PRODUTO @ //
+// @ BUSCAR CLIENTE NA ENTRADA DO EQUIPAMENTO @ //
 
 $(document).ready(function(){
     $("#search").typeahead({
@@ -148,7 +148,6 @@ $("#ativarStatus").click(function () {
     $.post(dirAcompPHP+'ativarStatus.php',{codigoServico:codigoServico,valorNovoStatus:valorNovoStatus}, function (response) {
         alertify.alert(response);
         atualizaStatus(codigoServico);
-
     });
 });
 
@@ -300,7 +299,7 @@ $("#editarGarantiaG").click(function () {
             if(!response){
                 alertify.alert('Esse serviço não foi garantido.')
             }else {
-                $("#frm_garantia").hide()
+                $("#frm_garantia").hide();
                 $("#frm_editarGarantia").show()
             }
         });

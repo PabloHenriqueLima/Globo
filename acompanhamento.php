@@ -13,7 +13,7 @@
         <!--CONTEUDO PARA CADA BOTÃO -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="entrada"><?php include dirAcompHtml . "OrdemServico.php" ?></div>
-            <div role="tabpanel" class="tab-pane active" id="status"> <?php include dirAcompHtml."statusAcomp.php" ?> </div>
+            <div role="tabpanel" class="tab-pane active" id="status"> <?php include dirAcompHtml . "statusOrdem.php" ?> </div>
             <div role="tabpanel" class="tab-pane" id="saida"> <?php include dirAcompHtml."saidaAcomp.php" ?> </div>
 
 <!--            <div role="tabpanel" class="tab-pane" id="verservico">--><?php //include dirAcompHtml."gerenAcomp.php" ?><!--</div>-->

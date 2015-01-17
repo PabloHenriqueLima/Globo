@@ -17,9 +17,15 @@
         </div>
     </div><!--form-->
     <div class="form-group">
+        <label for="nome" class="col-sm-3 control-label">Cliente</label>
+        <div class="col-sm-7">
+            <input type="text" name="nomeCli" id="nomeCli" disabled class="form-control">
+        </div>
+    </div><!--form-->
+    <div class="form-group">
         <label for="nome" class="col-sm-3 control-label">Equipamento</label>
         <div class="col-sm-7">
-            <input type="text" name="equipamento" id="equipamento" disabled class="form-control">
+            <input type="text" name="equip" id="equip" disabled class="form-control">
         </div>
     </div><!--form-->
     <div class="form-group">
