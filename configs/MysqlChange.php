@@ -3,7 +3,7 @@
 class MysqlChange {
     var $ip_mysql ="127.0.0.1";
     var $login_mysql ="root";
-    var $senha_mysql ="";
+    var $senha_mysql ="Goku2415";
     var $database_mysql="globodb";
     var $error_msg ="Não foi possível conectar ao banco de dados: ";
 

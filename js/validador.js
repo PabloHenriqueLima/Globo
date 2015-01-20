@@ -98,8 +98,11 @@ $(document).ready(function() {
                 if (ok) {
                     $.post(dirClientePHP+"cadastrarCliente.php", $form.serialize(), function (result) {
                         alertify.alert(result);
+                        var nome = $("#ipt_nomeCliente").val();
+                        window.localStorage.setItem('nome',nome);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();
+
                     });
                 } else {
                     return false;
