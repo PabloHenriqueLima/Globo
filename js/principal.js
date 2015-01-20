@@ -159,7 +159,7 @@ $(document).on("click","#btn_verUltimoServico", function () {
 // @ ativação de statuses @//
 
 var atualizaStatus = function (codigoServico) {
-    $.post(dirAcompPHP+'statusServico.php',{codigoServico:codigoServico}, function (response) {
+    $.post(dirAcompPHP+'statusOrdem.php',{codigoServico:codigoServico}, function (response) {
         var dat = JSON.parse(response);
         $(".statusAtual").text(dat.statusAtual);
     });

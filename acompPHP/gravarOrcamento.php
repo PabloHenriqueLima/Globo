@@ -38,7 +38,7 @@ if($sql->num_rows >0){
     echo "Orçamento já lançado, valor atualizado para o inserido";
 }
 
-$con->changeAll('localhost','root','','globodb');
+$con->changeAll('localhost','root','Goku2415','globodb');
 $mysqli = $con->connect();
 
 $query = "INSERT INTO orcamento (codigoServico,referente, valor) VALUES (?,?,?)";

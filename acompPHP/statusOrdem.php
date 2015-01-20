@@ -26,7 +26,6 @@ if($sql->num_rows > 0){
     $sql->bind_result($nomeCliente);
     $sql->fetch();
 
-
     $dados = ['statusAtual'=>$statusAtualServico,'equipamento'=>$equipamento,'cliente'=>$nomeCliente];
     $dadosJSON = json_encode($dados,JSON_UNESCAPED_UNICODE);
     echo $dadosJSON;
