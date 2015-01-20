@@ -3,7 +3,7 @@
 
 $ip_mysql ="127.0.0.1";
 $login_mysql ="root";
-$senha_mysql ="";
+$senha_mysql ="Goku2415";
 $database_mysql="globodb";
 $error_msg ="Não foi possível conectar ao banco de dados: ";
 

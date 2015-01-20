@@ -9,7 +9,7 @@ var options = {
     },
     wait: 500,
     highlight: true,
-    captureLength: 4
+    captureLength: 2
 }
 $("#buscarCliente").typeWatch( options );
 // ############# GERENCIAR CLIENTE ################## //
@@ -32,6 +32,23 @@ $(document).on("click","#btn_visualizar", function () {
                     i++;
                 });
                 $("#btn_cadastroB").hide();
+
+            });
+        }else {
+            return false;
+        }
+    });
+})
+// @ BOTÃO VISUALIZAR @ //
+$(document).on("click","#btn_servicos", function () {
+    var idCliente = $(this).attr("idCliente");
+    alertify.confirm("Deseja visualizar os serviços do cliente ?", function (ok) {
+        if (ok) {
+            $.post(dirClientePHP+'ordensCliente.php',{idCliente:idCliente}).done(function (result) {
+
+                console.debug(result)
+
+                $(".servicesResults").show().html(result);
 
             });
         }else {
@@ -256,6 +273,7 @@ $("#excluirServicoS").click(function (){
         });
     } //else
 });
+
 // @ Salvar  Serviço @ //
 $("#salvarServicoS").click(function (e) {
     e.preventDefault();
@@ -272,21 +290,8 @@ $("#verGarantiaG").click(function(){
         alertify.alert('ERRO: Código Inválido.')
     }else {
         $.post(dirGarantiaPHP+'garantia.php',{codigoServico:codigoServico},function(response){
-            if(!response){
-                alertify.alert('Esse serviço não foi garantido.')
-            }else {
-               var objResult = JSON.parse(response);
-                objResult.key = function (n) {
-                    return this[Object.keys(this)[n]];
-                }
-                var formEditar = $("#frm_garantia").show().find($('input:text, textarea'));
-                var i = 1;
-                $.each(formEditar, function (index, e) {
-                    e.value = objResult.key(i);
-                    e.disabled = true;
-                    i++;
-                });
-            }
+            res = JSON.parse(response);
+            alertify.alert('Serviço garantido até o dia:' + res.dataFinal );
         });
     }
 });

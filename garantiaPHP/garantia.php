@@ -1,10 +1,7 @@
 <?php
 require_once('../configs/localMysql.php');
 
-$codigoServico = $_POST['codigoServico'];
-if(isset($_POST['controle'])){
-    $controle = $_POST['controle'];
-}
+extract($_POST);
 
 $query =  "SELECT inicio,periodo from garantia WHERE codigoServico = ?";
 $sql = $mysqli->prepare($query);
@@ -13,18 +10,7 @@ $sql->execute();
 $sql->store_result();
 $sql->bind_result($dataInicio,$periodo);
 $sql->fetch();
-if($sql->num_rows >=1) {
-    if($controle){
-        echo true;
-        exit();
-    }
-    $query = "SELECT idCliente,equipamento,descDefeito,preco,DescBaixa FROM entrada INNER JOIN saida on entrada.codigoServico = saida.codigoServico WHERE entrada.codigoServico = ?";
-    $sql->prepare($query);
-    $sql->bind_param('s', $codigoServico);
-    $sql->execute();
-    $sql->store_result();
-    $sql->bind_result($idCliente, $equipamento, $desDefeito,$preco,$descBaixa);
-    $sql->fetch();
+
 
     $quebrarInicio = explode(" ",$dataInicio);
     list($data,$horario) = $quebrarInicio;
@@ -34,16 +20,7 @@ if($sql->num_rows >=1) {
     $dataFinal = $dataFinal.' '.$horario;
 
     $dados = [
-        'idCliente'=>$idCliente,
-        'equipamento'=>$equipamento,
-        'descDefeito'=>$desDefeito,
-        'preco'=>$preco,
-        'inicioGarantia'=>$dataInicio,
-        'dataFinalGarantia'=>$dataFinal,
-        'descBaixa'=>$descBaixa
+        'dataFinal'=>$dataFinal
     ];
     $dadosJSON = json_encode($dados,JSON_UNESCAPED_UNICODE);
     echo $dadosJSON;
-}else{
-    echo false;
-}

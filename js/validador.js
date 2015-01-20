@@ -248,7 +248,7 @@ $(document).ready(function() {
                 if (ok) {
                     var formS = $form.serialize();
                     console.log(formS);
-                    $.post(dirAcompPHP+"cadastrarBaixa.php", $form.serialize(), function (result) {
+                    $.post(dirAcompPHP+"finalizarOrdem.php", $form.serialize(), function (result) {
                         alertify.alert(result);
                         $($form).data('bootstrapValidator').resetForm();
                         $form[0].reset();

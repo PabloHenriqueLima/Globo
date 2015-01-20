@@ -74,7 +74,7 @@ textarea {
     display: none;
 }
 .centro{
-    width: 660px;
+    width: 800px;
     height: 45px;
     padding: 5px;
     margin: 0 auto;
@@ -142,6 +142,14 @@ td{
 #frm_editarGarantia{
     display: none;
     margin-top: 15px;
+}
+.servicesResults{
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 900;
+    font-size: x-large;
+    height: 500px;
+    overflow: auto;
+    display: none;
 }
 
 

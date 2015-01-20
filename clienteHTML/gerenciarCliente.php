@@ -22,6 +22,9 @@
         </table>
     </div>
 
+<div class="servicesResults">
+</div>
+
 <div id="div_editarCliente">
 <form class="form-horizontal" method="post" id="frm_editarCliente"><!-- EDITAR CLIENTE -->
     <div class="form-group">
@@ -72,3 +75,5 @@
     </div> <!--form-->
 </form> <!-- FORMULÁRIO CADASTRAR CLIENTE -->
 </div>
+
+

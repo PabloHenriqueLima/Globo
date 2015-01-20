@@ -1,6 +1,6 @@
 <!-- Jesus Cristo - O Senhor e Salvador da Terra. -->
 
-<div role="tabpanel" class="tab-pane active" id="acompanhamento"> <!--NAVEGAÇÃO ACOMPANHAMENTO -->
+<div role="tabpanel" class="tab-pane" id="acompanhamento"> <!--NAVEGAÇÃO ACOMPANHAMENTO -->
     <div class="content-home">
         <!--BOTÕES-->
         <div class="btn-grupo">
@@ -13,7 +13,7 @@
         <!--CONTEUDO PARA CADA BOTÃO -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="entrada"><?php include dirAcompHtml . "OrdemServico.php" ?></div>
-            <div role="tabpanel" class="tab-pane active" id="status"> <?php include dirAcompHtml . "statusOrdem.php" ?> </div>
+            <div role="tabpanel" class="tab-pane" id="status"> <?php include dirAcompHtml . "statusOrdem.php" ?> </div>
             <div role="tabpanel" class="tab-pane" id="saida"> <?php include dirAcompHtml."saidaAcomp.php" ?> </div>
 
 <!--            <div role="tabpanel" class="tab-pane" id="verservico">--><?php //include dirAcompHtml."gerenAcomp.php" ?><!--</div>-->

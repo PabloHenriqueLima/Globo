@@ -26,7 +26,8 @@ if($sql->num_rows >= 5){
         echo '<td>'.$i.'</td>';
         echo '<td>'.$nome.'</td>';
         echo '<td>'.$cpf.'</td>';
-        echo '<td>'."<button type=\"button\" id=\"btn_visualizar\" idCliente=\"$id\" class=\"btn btn-primary\"> Visualizar </button> ";
+        echo '<td>'."<button type=\"button\" id=\"btn_visualizar\" idCliente=\"$id\" class=\"btn btn-primary\"> Dados </button> ";
+        echo '<td>'."<button type=\"button\" id=\"btn_servicos\" idCliente=\"$id\" class=\"btn btn-primary\"> Serviços </button> ";
         echo "<button type=\"button\" id=\"btn_editar\" idCliente=\"$id\"  class=\"btn btn-warning\"> Editar </button> ";
         echo "<button type=\"button\" id=\"btn_deletar\" idCliente=\"$id\"  class=\"btn btn-danger\"> Excluir </button>".'</td>';
         echo '</tr>';

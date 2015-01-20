@@ -29,7 +29,7 @@ if(!$sql->execute()) echo $mysqli->error;
 $query = "UPDATE entrada SET finalizado = ? WHERE codigoServico=?";
 $sql->prepare($query);
 $x = 'x';
-$sql->bind_param('si',$x,$codigoservico);
+$sql->bind_param('ss',$x,$codigoservico);
 $sql->execute();
 
 if(!empty($garantiaDias)){
