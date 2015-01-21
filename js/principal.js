@@ -47,10 +47,8 @@ $(document).on("click","#btn_servicos", function () {
         if (ok) {
             $.post(dirClientePHP+'ordensCliente.php',{idCliente:idCliente}).done(function (result) {
 
-                console.debug(result)
-
-                $(".servicesResults").show().html(result);
-
+                if(result) $(".servicesResults").show().html(result);
+                if(!result) alertify.alert('Nenhum serviço cadastrado para esse cliente.')
             });
         }else {
             return false;
