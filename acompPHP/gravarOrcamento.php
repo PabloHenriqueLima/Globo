@@ -19,7 +19,7 @@ $sql->fetch();
 
 if($sql->num_rows >0){
 
-    $con->changeAll('localhost','root','','globodb');
+    $con->changeAll('localhost','root','Goku2415','globodb');
     $mysqli = $con->connect();
 
     $query = "UPDATE orcamento SET referente = ?,valor = ? WHERE codigoServico = ?";
